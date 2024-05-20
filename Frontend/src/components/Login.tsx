@@ -30,9 +30,9 @@ export default function Login() {
                 setEmailError("");
             }
         }
-        // Password has to be at least 6 characters long
+        // Password has to be at least 8 characters long
         if (!user_password || user_password.length < 6) {
-            setPasswordError("Password must be at least 6 characters long");
+            setPasswordError("Password must be at least 8 characters long");
             valid = false;
         } else {
             setPasswordError("");
