@@ -5,6 +5,6 @@
     "husky": "^8.0.0"
   },
   "scripts": {
-    "prepare": "husky && husky install"
+    "prepare": "husky && husky install" 
   }
 }
