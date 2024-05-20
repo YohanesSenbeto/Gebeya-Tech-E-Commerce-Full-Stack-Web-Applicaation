@@ -4,7 +4,7 @@ export default function Signup() {
             <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-lg shadow-lg">
                 <div>
                     <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                        Welcome to Drivers DLMS
+                        Welcome to Gebeya Tech E-commerce
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-500">
                         Welcome to Gebeya Tech E-commerce - Your Gateway to
