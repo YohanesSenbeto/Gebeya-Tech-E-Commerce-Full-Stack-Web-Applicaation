@@ -8,7 +8,7 @@ export default function Signup() {
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-500">
                         Welcome to Gebeya Tech E-commerce - Your Gateway to
-                        Seamless Shopping
+                        Seamless Shopping!
                     </p>
                 </div>
                 <form action="#" className="space-y-6" method="POST">
