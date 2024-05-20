@@ -20,3 +20,5 @@
 *.gitlab
 *.travis.yml
 *.circleci.yml
+*.husky/
+*.vscode/extensions.json
