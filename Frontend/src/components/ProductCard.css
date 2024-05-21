@@ -1,0 +1,34 @@
+.star-rating {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #ffd700; /* yellow color */
+  }
+  
+  .star-rating::before {
+    content: '\2605'; /* star symbol */
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+  
+  .star-rating.filled::before {
+    color: #ffd700; /* yellow color */
+  }
+  
+  .star-rating.half::before {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .star-rating.half::before::after {
+    content: '\2605'; /* star symbol */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #ffd700; /* yellow color */
+  }
+  
+  .star-rating.empty::before {
+    color: #ccc; /* gray color */
+  }
