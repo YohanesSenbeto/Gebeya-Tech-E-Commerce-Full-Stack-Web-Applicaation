@@ -8,6 +8,18 @@ import { Badge } from "@/components/ui/badge"
 import { DrawerTrigger, DrawerTitle, DrawerDescription, DrawerHeader, DrawerFooter, DrawerContent, Drawer } from "@/components/ui/drawer"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+
 export default function Navbar() {
   return (
     <header className="bg-sky-950 text-white flex h-16 w-full items-center justify-between px-6 shadow-md dark:bg-gray-950 bg-color ">
@@ -15,47 +27,37 @@ export default function Navbar() {
         <GlobeIcon className="h-6 w-6" />
         <span>Gebeya Tech</span>
       </Link>
-      <div className="flex-1 max-w-[400px] text-white">
-        <form>
-          <div className="relative">
-            <SearchIcon className="absolute left-1 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-grey-200" />
-            <Input
-              className="w-full rounded-md bg-gray-100 pl-50 pr-1 py-2 text-sm focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-50 dark:focus:ring-offset-gray-950"
-              placeholder="        Search products ..."
-              type="search"
-            />
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button className="absolute right-2 top-1/2 -translate-y-1/2" size="icon" variant="ghost">
-                  <FilterIcon className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>Filter Products</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuCheckboxItem>
-                  <span className="flex items-center gap-2">
-                    <CatIcon className="h-4 w-4" />
-                    Category
-                  </span>
-                </DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>
-                  <span className="flex items-center gap-2">
-                    <SearchIcon className="h-4 w-4" />
-                    Price
-                  </span>
-                </DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>
-                  <span className="flex items-center gap-2">
-                    <RatioIcon className="h-4 w-4" />
-                    Rating
-                  </span>
-                </DropdownMenuCheckboxItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </form>
-      </div>
+      <div className="flex-1 max-w-[600px] text-black">
+      <form>
+        <div className="relative flex items-center space-x-2">
+         
+          
+          <Select >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select a fruit" />
+            </SelectTrigger>
+            <SelectContent> 
+              <SelectGroup>
+                <SelectLabel className='text-'>ALL</SelectLabel>
+                <SelectItem value="apple">PHONES</SelectItem>
+                <SelectItem value="banana">LAPTOP</SelectItem>
+                <SelectItem value="blueberry">DEKTOP</SelectItem>
+                <SelectItem value="grapes">ELECTRONICS</SelectItem>
+                <SelectItem value="pineapple">TV</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+
+          <Input
+            className="w-full rounded-md bg-gray-100 pl-10 pr-4 py-2 text-sm focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-50 dark:focus:ring-offset-gray-950"
+            placeholder="Search products ..."
+            type="search"
+            
+          />
+           <SearchIcon className=" h-10 w-10 text-white dark:text-gray-200 text-3xl" />
+        </div>
+      </form>
+    </div>
       <div className="flex items-center gap-4">
       <Drawer>
   <DrawerTrigger asChild>
