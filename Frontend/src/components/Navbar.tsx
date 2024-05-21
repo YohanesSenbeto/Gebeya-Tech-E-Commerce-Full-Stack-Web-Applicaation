@@ -10,12 +10,12 @@ import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 
 export default function Navbar() {
   return (
-    <header className="bg-dark-500 flex h-16 w-full items-center justify-between px-6 shadow-md dark:bg-gray-950">
+    <header className="bg-sky-950 text-white flex h-16 w-full items-center justify-between px-6 shadow-md dark:bg-gray-950 bg-color ">
       <Link className="flex items-center gap-2 font-semibold text-lg" to="/">
         <GlobeIcon className="h-6 w-6" />
         <span>Gebeya Tech</span>
       </Link>
-      <div className="flex-1 max-w-[400px]">
+      <div className="flex-1 max-w-[400px] text-white">
         <form>
           <div className="relative">
             <SearchIcon className="absolute left-1 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-grey-200" />
@@ -63,9 +63,9 @@ export default function Navbar() {
       className="relative text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
       to="#"
     >
-      <ShoppingCartIcon className="h-6 w-6" />
-      <Badge className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white">
-        3
+      <ShoppingCartIcon className="text-white h-6 w-6" />
+      <Badge className=" absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-yellow text-white bg-white">
+        <p className='text-amber-700 '>3</p>
       </Badge>
     </Link>
   </DrawerTrigger>
@@ -185,13 +185,13 @@ export default function Navbar() {
 
 
 
-        <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-400 text-white">
           <LocateIcon className="h-5 w-5" />
-          <span>Addis Ababa</span>
+          <span>Ethiopia</span>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Avatar className="h-8 w-8 border border-gray-200 dark:border-gray-800">
+            <Avatar className="h-8 w-8 border border-gray-200 dark:border-gray-800 text-black">
               <AvatarImage alt="@shadcn" src="/placeholder-user.jpg" />
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
@@ -211,34 +211,34 @@ export default function Navbar() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-6 text-white">
           <Link
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             to="/home"
           >
             Home
           </Link>
           <Link
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className=" text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             to="/shop"
           >
             Shop
           </Link>
           <Link
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             to="/about"
           >
             About
           </Link>
 
           <Link
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             to="/login"
           >
             Login
           </Link>
           <Link
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             to="/contact"
           >
             Contact
