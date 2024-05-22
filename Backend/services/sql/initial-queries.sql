@@ -1,4 +1,4 @@
--- Create the users table
+/workspaces/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application/Backend/routes-- Create the users table
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` INT PRIMARY KEY AUTO_INCREMENT,
   `fullName` VARCHAR(50) NOT NULL,
