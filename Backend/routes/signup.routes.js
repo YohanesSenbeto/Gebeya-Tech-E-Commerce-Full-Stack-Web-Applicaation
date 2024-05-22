@@ -2,11 +2,11 @@
 const express = require("express");
 // Call the router method from express to create the router
 const router = express.Router();
-// Import the login controller
-const signupController = require("../controllers/signup.controller");
-// // Create a route to handle the login request on post
-// router.post("/api/wanipretrive", wanIpController.retrieveData);
-// router.post("/api/addWanIp", wanIpController.addWanIp);
-router.post("/api/signup", signupController.signup);
+// Import the sign-up controller
+const signUpControllers = require("../controllers/signup.controller");
+
+// Route for normal, admin, manager, and staff users
+router.post("/api/signup", signUpControllers.signup);
+
 // Export the router
 module.exports = router;
