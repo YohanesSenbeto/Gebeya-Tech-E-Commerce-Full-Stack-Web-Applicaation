@@ -1,0 +1,39 @@
+version: 1
+applications:
+  - appRoot: frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - echo "Starting frontend pre-build..."
+            - npm ci
+        build:
+          commands:
+            - echo "Building frontend..."
+            - npm run build
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+  - appRoot: backend
+    backend:
+      phases:
+        preBuild:
+          commands:
+            - echo "Starting backend pre-build..."
+            - npm ci
+            - cp ../frontend/.env ./.env
+        build:
+          commands:
+            - echo "Building backend..."
+            - npm run build
+      artifacts:
+        baseDirectory: build
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
