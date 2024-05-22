@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/gebeya_tech_e-commerce.pem
 
 # production
 /build
