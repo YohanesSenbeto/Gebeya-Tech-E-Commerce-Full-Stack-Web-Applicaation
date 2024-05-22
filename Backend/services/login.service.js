@@ -45,18 +45,12 @@ async function getUserData(email, userType) {
 // A function to validate user login
 async function validateUserLogin(user_email, user_password, userType) {
     try {
-        let tableName, idField, emailField, passwordField;
+        let tableName, emailField, passwordField;
 
         if (userType === "normal") {
             tableName = "users";
-            idField = "user_id";
             emailField = "user_email";
             passwordField = "user_password";
-        } else if (["admin", "manager", "staff"].includes(userType)) {
-            tableName = "staff";
-            idField = "staff_id";
-            emailField = "staff_email";
-            passwordField = "staff_password"; // Adjust based on your database structure
         } else {
             return { status: "fail", message: "Invalid user type" };
         }
@@ -69,11 +63,6 @@ async function validateUserLogin(user_email, user_password, userType) {
             return { status: "fail", message: "User does not exist" };
         }
 
-        // Check if the user is active
-        if (userRows[0].active_staff !== 1 && userType !== "normal") {
-            return { status: "fail", message: "User is not active" };
-        }
-
         // Compare passwords
         const hashedPassword = userRows[0][passwordField];
         const passwordMatch = await bcrypt.compare(
@@ -84,7 +73,6 @@ async function validateUserLogin(user_email, user_password, userType) {
         if (!passwordMatch) {
             return { status: "fail", message: "Incorrect password" };
         }
-        console.log(userRows[0]);
 
         return { status: "success", user: userRows[0] };
     } catch (error) {
