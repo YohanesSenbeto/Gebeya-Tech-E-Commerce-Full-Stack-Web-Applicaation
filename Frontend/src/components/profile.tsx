@@ -1,5 +1,5 @@
 import React from "react";
-import logOut from './services/loginService/logOut';
+
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import {
     DropdownMenuTrigger,
