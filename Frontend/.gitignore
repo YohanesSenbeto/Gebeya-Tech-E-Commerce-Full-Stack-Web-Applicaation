@@ -22,3 +22,4 @@
 *.circleci.yml
 *.husky/
 *.vscode/extensions.json
+*.vscode/
