@@ -1,4 +1,4 @@
-const api_url = `http://ec2-44-219-138-130.compute-1.amazonaws.com:8000/`;
+const api_url = `https://ec2-44-219-138-130.compute-1.amazonaws.com:8000/`;
 
 interface LoginForm {
   email:string;
