@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { logIn } from "./services/loginService";
+import { logIn } from "./services/loginservice";
 
 interface LoginResponse {
     status: number;
@@ -51,7 +51,7 @@ export default function Login() {
 
             cosole.log('proooooooooooooooooooooooooooooooo')
             console.log(data)
-        
+
         if (data.status === 200 ) {
                navigate('/profile')
             } else {
