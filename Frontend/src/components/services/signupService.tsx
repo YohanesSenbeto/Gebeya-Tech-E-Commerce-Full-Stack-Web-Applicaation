@@ -6,10 +6,12 @@ export interface FormData {
     confirmPassword: string;
     phone: string;
     gender: string;
+    user_role_id:number;
+    active_user:number;
   }
   
   export async function signup(formData: FormData): Promise<void> {
-    const response = await fetch('/api/signup', {
+    const response = await fetch('http://localhost:8000/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
