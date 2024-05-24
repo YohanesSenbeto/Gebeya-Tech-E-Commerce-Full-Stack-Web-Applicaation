@@ -1,7 +1,7 @@
-// Import from the env 
-const api_url = `http://localhost:8000`;
+// Import from the env
+const api_url = `http://ec2-44-219-138-130.compute-1.amazonaws.com:8000`;
 
-// A function to send post request to create a new User 
+// A function to send post request to create a new User
 const createUser = async (formData, loggedInUserToken:string) => {
   const requestOptions = {
     method: 'POST',
@@ -30,9 +30,9 @@ const getAllUsers = async (token) => {
   return response;
 }
 
-// Export all the functions 
+// Export all the functions
 const UserService = {
   createUser,
   getAllUsers
 }
-export default UserService; 
+export default UserService;
