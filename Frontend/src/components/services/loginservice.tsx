@@ -1,12 +1,12 @@
-const api_url = `http://localhost:8000`; 
+const api_url = `http://ec2-44-219-138-130.compute-1.amazonaws.com:8000/`;
 
 interface LoginForm {
   email:string;
   password: string;
-  
+
 }
 
-// A function to send the login request to the server 
+// A function to send the login request to the server
 const logIn = async (formData: LoginForm): Promise<Response> => {
   const requestOptions: RequestInit = {
     method: 'POST',
@@ -19,7 +19,7 @@ const logIn = async (formData: LoginForm): Promise<Response> => {
 
   const data = await response.json();
   console.log(data)
-  
+
 
 
   if (data.status === "success") {
@@ -35,7 +35,7 @@ const logIn = async (formData: LoginForm): Promise<Response> => {
     console.error('Login failed:', data.message);
   }
   return response;
-  
+
 }
 
 // A function to log out the user
@@ -44,8 +44,8 @@ const logOut = (): void => {
 
 };
 export default logOut
-// Export the functions 
+// Export the functions
 export {
   logIn
-  
+
 }
