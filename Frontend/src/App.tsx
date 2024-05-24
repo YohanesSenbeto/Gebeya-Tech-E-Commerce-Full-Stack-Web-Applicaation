@@ -7,9 +7,13 @@ import ProductList from "./components/ProductList";
 import Contact from "./components/contact";
 import About from "./components/about";
 import Profile from "./components/profile";
+
+import { AuthProvider } from './components/Contexts/AuthContext';
+
 function App() {
     return (
         <BrowserRouter>
+<AuthProvider>
             <Navbar />
             <Routes>
                 <Route path="/signup" element={<Signup />} />
@@ -21,6 +25,7 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 {/* other routes go here */}
             </Routes>
+</AuthProvider>
         </BrowserRouter>
     );
 }

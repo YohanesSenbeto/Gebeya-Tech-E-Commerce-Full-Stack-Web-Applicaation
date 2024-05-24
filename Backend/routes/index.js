@@ -4,29 +4,23 @@ const express = require("express");
 const router = express.Router();
 // Import the install router
 const installRouter = require("./install.routes");
-// Import the employee routes
-// const staffRouter = require("./staff.routes");
+
 // Import the login routes
 const loginRoutes = require("./login.routes");
-// const orderRoutes = require("./order.routes");
-const serviceRoutes = require("./service.routes");
-// const customerRoutes = require("./customer.routes");
-const routerRoutes = require("./router.routes");
-const wanipRoutes = require("./signup.routes");
-// const supportRoutes = require("./support.routes");
+const orderRoutes = require("./order.routes");
+
+const signupRoutes = require("./signup.routes");
+
+
+
+router.use(signupRoutes);
 // Add the install router to the main router
 router.use(installRouter);
-// Add the employee routes to the main router
-router.use(staffRouter);
+
 // Add the login routes to the main router
 router.use(loginRoutes);
-router.use(wanipRoutes);
 
 router.use(orderRoutes);
-router.use(serviceRoutes);
 
-router.use(customerRoutes);
-router.use(routerRoutes);
-router.use(supportRoutes);
 // Export the router
 module.exports = router;

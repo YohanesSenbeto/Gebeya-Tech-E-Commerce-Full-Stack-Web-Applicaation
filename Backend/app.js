@@ -29,5 +29,16 @@ app.use(router);
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
+app.get('/',
+(req,res) => {
+  res.status(200).json({
+    status: "success",
+    data: "conected",
+  });
+}
+
+
+
+)
 // Export the webserver for use in the application 
 module.exports = app;
