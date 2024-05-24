@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from '../App';
 import reportWebVitals from './reportWebVitals';
-// Import the BrowserRouter 
+// Import the BrowserRouter
 import { BrowserRouter } from 'react-router-dom';
 
 // Import the AuthContext Provider
 import { AuthProvider } from './components/Contexts/AuthContext';
+
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
