@@ -1,4 +1,5 @@
 import React from "react";
+import logOut from './services/loginService/logOut';
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import {
     DropdownMenuTrigger,
@@ -58,7 +59,7 @@ const Profile: React.FC = () => {
                             <Link to={"/settings"}>Settings</Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
+                        <DropdownMenuItem onClick={logOut}>Logout</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </header>
