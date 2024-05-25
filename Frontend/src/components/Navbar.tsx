@@ -158,6 +158,9 @@ export default function Navbar() {
                             <Link to="/profile">Profile</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
+                            <Link to="/Eypro">EYproducts</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
                             <Link to="/settings">Settings</Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />

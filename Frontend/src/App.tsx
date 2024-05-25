@@ -7,6 +7,7 @@ import ProductList from "./components/ProductList";
 import Contact from "./components/contact";
 import About from "./components/about";
 import Profile from "./components/profile";
+import Eypro from "./components/Eypro";
 
 import { AuthProvider } from './components/Contexts/AuthContext';
 
@@ -23,6 +24,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/Eypro" element={<Eypro />} />
+
                 {/* other routes go here */}
             </Routes>
 </AuthProvider>
