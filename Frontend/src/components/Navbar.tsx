@@ -120,7 +120,7 @@ export default function Navbar({cart}) {
                         >
                             <ShoppingCartIcon className="text-white h-6 w-6" />
                             <Badge className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-yellow text-white bg-white">
-                                <p className="text-amber-700">3</p>
+                                <p className="text-amber-700">{cartCount}</p>
                             </Badge>
                         </Link>
                     </DrawerTrigger>
