@@ -7,7 +7,7 @@ const INITIAL_STATE = {
       title: "Cutting-Edge Laptop",
       description: "Experience the ultimate in performance and portability.",
       price: "$1499.99",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://ideogram.ai/api/images/direct/_T7nv9DwQK6Ox2WvyrqYxg.png",
     },
     {
       id: 2,
