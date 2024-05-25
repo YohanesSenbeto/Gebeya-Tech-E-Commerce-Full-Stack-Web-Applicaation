@@ -38,7 +38,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-export default function Navbar({cart}) {
+export function Navbar({cart}) {
 
     const [cartCount, setCartCount] = useState(0);
 
@@ -306,3 +306,12 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+      cart: state.shop.cart,
+    };
+  };
+
+  export default connect(mapStateToProps)(Navbar);
