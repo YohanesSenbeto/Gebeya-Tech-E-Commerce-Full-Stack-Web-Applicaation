@@ -4,7 +4,7 @@ import React from "react";
 // Redux
 import { connect } from "react-redux";
 
-import {Product} from "./Product";
+import Product from "./Product";
 
 const Products = ({ products }) => {
     return (
