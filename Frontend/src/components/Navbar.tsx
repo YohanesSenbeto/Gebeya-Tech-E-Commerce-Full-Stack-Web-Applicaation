@@ -38,7 +38,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-export function Navbar({cart}) {
+const Navbar=({cart}) =>{
 
     const [cartCount, setCartCount] = useState(0);
 
