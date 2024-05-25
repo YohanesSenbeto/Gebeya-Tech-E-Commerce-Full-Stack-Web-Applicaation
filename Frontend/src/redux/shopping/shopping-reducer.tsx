@@ -21,7 +21,7 @@ const INITIAL_STATE = {
       title: "Smartphone Pro",
       description: "The latest in smartphone technology.",
       price: "$799.99",
-      imageUrl: "https://imageUrls.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      imageUrl: "https://ideogram.ai/api/images/direct/4APmysA8QHKq1doXXCuwdw.jpg",
     },
     {
       id: 4,
