@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 import {Product} from "./Product";
 
-const Products = ({ products }) => {
+const export Products = ({ products }) => {
     return (
       <div className={styles.products}>
         {products.map((product) => (
