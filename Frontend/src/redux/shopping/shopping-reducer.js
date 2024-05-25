@@ -32,21 +32,21 @@ const INITIAL_STATE = {
 
 
     {
-      id: 1,
+      id: 4,
       title: "Cutting-Edge Laptop",
       description: "Experience the ultimate in performance and portability.",
       price: "$1,499.99",
       imageUrl: "/placeholder.svg",
     },
     {
-      id: 2,
+      id: 5,
       title: "High-Performance Tablet",
       description: "A tablet that combines power and mobility.",
       price: "$999.99",
       imageUrl: "/placeholder.svg",
     },
     {
-      id: 3,
+      id: 6,
       title: "Smartphone Pro",
       description: "The latest in smartphone technology.",
       price: "$799.99",
