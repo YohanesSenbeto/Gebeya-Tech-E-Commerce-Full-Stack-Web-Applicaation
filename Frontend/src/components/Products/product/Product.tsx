@@ -2,17 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Button } from "@/components/ui/button";
-import {
-  loadCurrentItem,
-  addToCart,
-} from "../../../redux/shopping/shopping-actions";
+import { loadCurrentItem, addToCart } from "../../../redux/shopping/shopping-actions";
 
 const Product = ({ product, addToCart, loadCurrentItem }) => {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
-      <Link className="absolute inset-0 z-10" to={`/product/${product.id}`}>
-        <span className="sr-only">View {product.title}</span>
-      </Link>
       <img
         alt={product.title}
         className="object-cover w-full aspect-[3/2] group-hover:opacity-80 transition-opacity"
@@ -35,26 +29,23 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
                 Add to Cart
               </Button>
             </div>
-
           </div>
         </div>
+        <div className="mt-4">
+          <Button
+            onClick={() => loadCurrentItem(product)}
+            className="bg-[#FBBF24] text-[#0B2D5F] hover:bg-[#0B2D5F] hover:text-[#FBBF24] transition-colors"
+            size="sm"
+          >
+            <Link
+              to={`/product/${product.id}`}
+              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#0B2D5F] disabled:pointer-events-none disabled:opacity-50"
+            >
+              Details
+            </Link>
+          </Button>
+        </div>
       </div>
-
-
-      <div>
-              <Button
-                onClick={() => loadCurrentItem(product)}
-                className="bg-[#FBBF24] text-[#0B2D5F] hover:bg-[#0B2D5F] hover:text-[#FBBF24] transition-colors"
-                size="sm"
-              >
-                <Link
-                  to={`/product/${product.id}`}
-                  className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#0B2D5F] disabled:pointer-events-none disabled:opacity-50"
-                >
-                  Details
-                </Link>
-              </Button>
-            </div>
     </div>
   );
 };
@@ -67,4 +58,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(Product);
-export {Product}
+export { Product };
