@@ -11,7 +11,7 @@ export interface FormData {
 }
 
 export async function signup(formData: FormData): Promise<void> {
-    const response = await fetch("http://44.219.138.130:8000/api/signup", {
+    const response = await fetch("http://localhost:8000/api/signup", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
