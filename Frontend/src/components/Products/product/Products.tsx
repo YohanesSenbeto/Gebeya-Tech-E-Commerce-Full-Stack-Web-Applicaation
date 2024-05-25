@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 import {Product} from "./Product";
 
-const export Products = ({ products }) => {
+const Products = ({ products }) => {
     return (
       <div className={styles.products}>
         {products.map((product) => (
@@ -26,3 +26,4 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Products);
+export {Products}
