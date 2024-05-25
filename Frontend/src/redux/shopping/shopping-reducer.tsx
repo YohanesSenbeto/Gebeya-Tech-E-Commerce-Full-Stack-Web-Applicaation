@@ -7,14 +7,14 @@ const INITIAL_STATE = {
       title: "Cutting-Edge Laptop",
       description: "Experience the ultimate in performance and portability.",
       price: "$1499.99",
-      imageUrl: "https://ideogram.ai/api/imageUrls/direct/_T7nv9DwQK6Ox2WvyrqYxg.png",
+      imageUrl: "https://ideogram.ai/api/images/direct/15xFfExTQISv52FwLGacAw.jpg",
     },
     {
       id: 2,
       title: "High-Performance Tablet",
       description: "A tablet that combines power and mobility.",
       price: "$999.99",
-      imageUrl: "https://imageUrls.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      imageUrl: "https://ideogram.ai/api/images/direct/15xFfExTQISv52FwLGacAw.jpg",
     },
     {
       id: 3,
