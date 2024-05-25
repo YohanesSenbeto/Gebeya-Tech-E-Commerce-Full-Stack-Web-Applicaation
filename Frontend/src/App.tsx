@@ -7,7 +7,7 @@ import ProductList from "./components/ProductList";
 import Contact from "./components/contact";
 import About from "./components/about";
 import Profile from "./components/profile";
-import Eypro from "./components/Eypro";
+import Eypro from "./components/Products/product/Eypro";
 
 import { AuthProvider } from './components/Contexts/AuthContext';
 
