@@ -10,7 +10,8 @@ import Profile from "./components/profile";
 import Eypro from "./components/Products/product/Eypro";
 
 import { AuthProvider } from './components/Contexts/AuthContext';
-import store from "./redux/store";
+import { Provider } from "react-redux";
+import store from "../src/redux/store";
 
 function App() {
     return (
