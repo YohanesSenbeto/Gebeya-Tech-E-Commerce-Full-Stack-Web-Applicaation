@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+import React, {  useEffect } from "react";
+
+
+import { connect } from "react-redux";
 import {
     DropdownMenuTrigger,
     DropdownMenuLabel,
@@ -33,7 +38,18 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-export default function Navbar() {
+const Navbar=({cart}) =>{
+
+    const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+
+    setCartCount(count);
+  }, [cart, cartCount]);
     const [selectedCategory, setSelectedCategory] = useState("");
 
     const handleCategoryChange = async (value) => {
@@ -104,7 +120,7 @@ export default function Navbar() {
                         >
                             <ShoppingCartIcon className="text-white h-6 w-6" />
                             <Badge className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-yellow text-white bg-white">
-                                <p className="text-amber-700">3</p>
+                                <p className="text-amber-700">{cartCount}</p>
                             </Badge>
                         </Link>
                     </DrawerTrigger>
@@ -156,6 +172,9 @@ export default function Navbar() {
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                             <Link to="/profile">Profile</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Link to="/Eypro">EYproducts</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Link to="/settings">Settings</Link>
@@ -287,3 +306,12 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+      cart: state.shop.cart,
+    };
+  };
+
+  export default connect(mapStateToProps)(Navbar);

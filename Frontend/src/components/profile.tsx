@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4dabc894dffb76e8fc61fe314c7543ba31c3663
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import {
     DropdownMenuTrigger,

@@ -7,13 +7,17 @@ import ProductList from "./components/ProductList";
 import Contact from "./components/contact";
 import About from "./components/about";
 import Profile from "./components/profile";
+import Eypro from "./components/Products/product/Eypro";
 
 import { AuthProvider } from './components/Contexts/AuthContext';
+import { Provider } from "react-redux";
+import store from "../src/redux/store";
 
 function App() {
     return (
         <BrowserRouter>
 <AuthProvider>
+<Provider store={store}>
             <Navbar />
             <Routes>
                 <Route path="/signup" element={<Signup />} />
@@ -23,8 +27,11 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/Eypro" element={<Eypro />} />
+
                 {/* other routes go here */}
             </Routes>
+            </Provider>
 </AuthProvider>
         </BrowserRouter>
     );

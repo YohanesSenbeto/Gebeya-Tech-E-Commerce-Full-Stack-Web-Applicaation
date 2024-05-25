@@ -49,11 +49,19 @@ export default function Login() {
         try {
             const data = await logIn({ email, password });
 
+<<<<<<< HEAD
             cosole.log("proooooooooooooooooooooooooooooooo");
             console.log(data);
 
             if (data.status === 200) {
                 navigate("/profile");
+=======
+            cosole.log('proooooooooooooooooooooooooooooooo')
+            console.log(data)
+
+        if (data.status === 200 ) {
+               navigate('/profile')
+>>>>>>> a4dabc894dffb76e8fc61fe314c7543ba31c3663
             } else {
                 setServerError(data.message);
             }
