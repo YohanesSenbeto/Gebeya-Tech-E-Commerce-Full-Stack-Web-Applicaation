@@ -29,19 +29,29 @@ const Cart: React.FC<CartProps> = ({ cart }) => {
   }, [cart]);
 
   return (
-    <div className="cart">
-      <div className="cart__items">
-        {cart.map((item) => (
-          <CartItem key={item.id} item={item} />
-        ))}
-      </div>
-      <div className="cart__summary">
-        <h4 className="summary__title">Cart Summary</h4>
-        <div className="summary__price">
-          <span>TOTAL: ({totalItems} items)</span>
-          <span>$ {totalPrice}</span>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="flex flex-col md:flex-row md:space-x-6">
+        <div className="md:w-3/4">
+          <div className="bg-white rounded shadow-md">
+            <div className="p-4">
+              {cart.map((item) => (
+                <CartItem key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
         </div>
-        <button className="summary__checkoutBtn">Proceed To Checkout</button>
+        <div className="md:w-1/4">
+          <div className="bg-white rounded shadow-md p-4">
+            <h4 className="text-lg font-semibold mb-4">Cart Summary</h4>
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-gray-600">TOTAL: ({totalItems} items)</span>
+              <span className="text-gray-800 font-bold">${totalPrice}</span>
+            </div>
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              Proceed To Checkout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
