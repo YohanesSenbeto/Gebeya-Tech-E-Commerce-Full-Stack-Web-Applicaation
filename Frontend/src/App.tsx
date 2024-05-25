@@ -10,11 +10,13 @@ import Profile from "./components/profile";
 import Eypro from "./components/Products/product/Eypro";
 
 import { AuthProvider } from './components/Contexts/AuthContext';
+import store from "./redux/store";
 
 function App() {
     return (
         <BrowserRouter>
 <AuthProvider>
+<Provider store={store}>
             <Navbar />
             <Routes>
                 <Route path="/signup" element={<Signup />} />
@@ -28,6 +30,7 @@ function App() {
 
                 {/* other routes go here */}
             </Routes>
+            </Provider>
 </AuthProvider>
         </BrowserRouter>
     );
