@@ -1,58 +1,89 @@
 import * as actionTypes from "./shopping-types";
 
 const INITIAL_STATE = {
-  products: [
+   products :[
     {
       id: 1,
-      title: "This is the COOLEST Cube Ever",
-      description:
-        "This cube will keep you busy the entire day and it is very fun to play with",
-      price: 15.0,
+      title: "Cutting-Edge Laptop",
+      description: "Experience the ultimate in performance and portability.",
+      price: 1499.99,
       image:
-        "https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 2,
-      title: "Large Coffee Cup",
-      description:
-        "Get a big cup of coffee every morning before the day starts",
-      price: 20.0,
+      title: "High-Performance Tablet",
+      description: "A tablet that combines power and mobility.",
+      price: 999.99,
       image:
-        "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 3,
-      title: "Books That CHANGED My Life",
-      description:
-        "These books will keep you busy all throughout the entire lockdown and give you some great advise from famous people",
-      price: 150.0,
+      title: "Smartphone Pro",
+      description: "The latest in smartphone technology.",
+      price: 799.99,
       image:
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
-
-
     {
       id: 4,
-      title: "Cutting-Edge Laptop",
-      description: "Experience the ultimate in performance and portability.",
-      price: "$1,499.99",
-      imageUrl: "/placeholder.svg",
+      title: "Wireless Headphones",
+      description: "Enjoy high-quality sound without the wires.",
+      price: 199.99,
+      image:
+        "https://images.unsplash.com/photo-1505740106531-4243f3831f5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 5,
-      title: "High-Performance Tablet",
-      description: "A tablet that combines power and mobility.",
-      price: "$999.99",
-      imageUrl: "/placeholder.svg",
+      title: "Smartwatch",
+      description: "Stay connected and track your fitness.",
+      price: 299.99,
+      image:
+        "https://images.unsplash.com/photo-1515678911563-ea8a13693745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 6,
-      title: "Smartphone Pro",
-      description: "The latest in smartphone technology.",
-      price: "$799.99",
-      imageUrl: "/placeholder.svg",
+      title: "Bluetooth Speaker",
+      description: "Portable and powerful sound for any occasion.",
+      price: 149.99,
+      image:
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
-  ],
+    {
+      id: 7,
+      title: "4K Ultra HD TV",
+      description: "Stunning picture quality for your home entertainment.",
+      price: 1299.99,
+      image:
+        "https://images.unsplash.com/photo-1606813909259-4b66d374f0a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    },
+    {
+      id: 8,
+      title: "Gaming Console",
+      description: "The best gaming experience with the latest console.",
+      price: 499.99,
+      image:
+        "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    },
+    {
+      id: 9,
+      title: "Drone with Camera",
+      description: "Capture stunning aerial photos and videos.",
+      price: 599.99,
+      image:
+        "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    },
+    {
+      id: 10,
+      title: "Virtual Reality Headset",
+      description: "Immersive VR experience for gaming and entertainment.",
+      price: 399.99,
+      image:
+        "https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    }
+  ]
+  ,
   cart: [],
   currentItem: null,
 };
