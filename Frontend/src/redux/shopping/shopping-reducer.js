@@ -29,6 +29,29 @@ const INITIAL_STATE = {
       image:
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
     },
+
+
+    {
+      id: 1,
+      title: "Cutting-Edge Laptop",
+      description: "Experience the ultimate in performance and portability.",
+      price: "$1,499.99",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: 2,
+      title: "High-Performance Tablet",
+      description: "A tablet that combines power and mobility.",
+      price: "$999.99",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: 3,
+      title: "Smartphone Pro",
+      description: "The latest in smartphone technology.",
+      price: "$799.99",
+      imageUrl: "/placeholder.svg",
+    },
   ],
   cart: [],
   currentItem: null,
