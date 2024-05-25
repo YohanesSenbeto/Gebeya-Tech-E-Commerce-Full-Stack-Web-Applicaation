@@ -24,7 +24,7 @@ const Products = ({ products }) => {
     }
 
 
-}
+
 
 
 const mapStateToProps = (state) => {
