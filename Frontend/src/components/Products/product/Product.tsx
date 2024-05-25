@@ -36,9 +36,9 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
                 >
                   Add to Cart
                 </Button>
-                <Link  onClick={() => loadCurrentItem(product)}
+                <Link to={`/product/${product.id}`}  onClick={() => loadCurrentItem(product)}
                   className="inline-flex items-center justify-center rounded-md bg-[#FBBF24] text-[#0B2D5F] hover:bg-[#0B2D5F] hover:text-[#FBBF24] px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#0B2D5F] disabled:pointer-events-none disabled:opacity-50"
-                  to={`/product/${product.id}`}
+
                 >
                   Details
                 </Link>
