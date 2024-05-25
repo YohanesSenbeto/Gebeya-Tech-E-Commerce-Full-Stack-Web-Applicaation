@@ -4,9 +4,9 @@ import Products from './Products'
 
 function Eypro() {
     return (
-        <div>
-<Products/>
-        </div>
+
+   <Products/>
+
     )
 }
 
