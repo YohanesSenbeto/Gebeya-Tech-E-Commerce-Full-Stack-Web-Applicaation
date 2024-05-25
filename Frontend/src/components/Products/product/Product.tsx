@@ -19,7 +19,7 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
           </Link>
           <img
             alt={product.title}
-            className="object-cover w-full aspect-[3/2] group-hover:opacity-50 transition-opacity"
+            className="object-cover w-full aspect-[3/2] group-hover:opacity-80 transition-opacity"
             height={300}
             src={product.imageUrl}
             width={450}
