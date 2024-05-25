@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+import React, {  useEffect } from "react";
+
+
+import { connect } from "react-redux";
 import {
     DropdownMenuTrigger,
     DropdownMenuLabel,
@@ -33,7 +38,18 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-export default function Navbar() {
+export default function Navbar({cart}) {
+
+    const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+
+    setCartCount(count);
+  }, [cart, cartCount]);
     const [selectedCategory, setSelectedCategory] = useState("");
 
     const handleCategoryChange = async (value) => {
