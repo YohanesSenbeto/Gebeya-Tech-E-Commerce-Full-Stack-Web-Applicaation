@@ -6,82 +6,72 @@ const INITIAL_STATE = {
       id: 1,
       title: "Cutting-Edge Laptop",
       description: "Experience the ultimate in performance and portability.",
-      price: 1499.99,
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$1499.99",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 2,
       title: "High-Performance Tablet",
       description: "A tablet that combines power and mobility.",
-      price: 999.99,
-      image:
-        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$999.99",
+      image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 3,
       title: "Smartphone Pro",
       description: "The latest in smartphone technology.",
-      price: 799.99,
-      image:
-        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$799.99",
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 4,
       title: "Wireless Headphones",
       description: "Enjoy high-quality sound without the wires.",
-      price: 199.99,
-      image:
-        "https://images.unsplash.com/photo-1505740106531-4243f3831f5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$199.99",
+      image: "https://images.unsplash.com/photo-1505740106531-4243f3831f5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 5,
       title: "Smartwatch",
       description: "Stay connected and track your fitness.",
-      price: 299.99,
-      image:
-        "https://images.unsplash.com/photo-1515678911563-ea8a13693745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$299.99",
+      image: "https://images.unsplash.com/photo-1515678911563-ea8a13693745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 6,
       title: "Bluetooth Speaker",
       description: "Portable and powerful sound for any occasion.",
-      price: 149.99,
-      image:
-        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$149.99",
+      image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 7,
       title: "4K Ultra HD TV",
       description: "Stunning picture quality for your home entertainment.",
-      price: 1299.99,
-      image:
-        "https://images.unsplash.com/photo-1606813909259-4b66d374f0a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$1299.99",
+      image: "https://images.unsplash.com/photo-1606813909259-4b66d374f0a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 8,
       title: "Gaming Console",
       description: "The best gaming experience with the latest console.",
-      price: 499.99,
-      image:
-        "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$499.99",
+      image: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 9,
       title: "Drone with Camera",
       description: "Capture stunning aerial photos and videos.",
-      price: 599.99,
-      image:
-        "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      price: "$599.99",
+      image: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 10,
       title: "Virtual Reality Headset",
       description: "Immersive VR experience for gaming and entertainment.",
-      price: 399.99,
-      image:
-        "https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    }
+      price: "$399.99",
+      image: "https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    },
   ]
   ,
   cart: [],
