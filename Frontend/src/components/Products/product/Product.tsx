@@ -35,7 +35,13 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
                 Add to Cart
               </Button>
             </div>
-            <div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div>
               <Button
                 onClick={() => loadCurrentItem(product)}
                 className="bg-[#FBBF24] text-[#0B2D5F] hover:bg-[#0B2D5F] hover:text-[#FBBF24] transition-colors"
@@ -49,9 +55,6 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
