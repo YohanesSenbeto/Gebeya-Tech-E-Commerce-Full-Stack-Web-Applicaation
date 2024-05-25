@@ -8,7 +8,7 @@ import {Product} from "./Product";
 
 const Products = ({ products }) => {
     return (
-      <div className={styles.products}>
+      <div >
         {products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
