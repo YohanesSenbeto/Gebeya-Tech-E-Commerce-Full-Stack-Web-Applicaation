@@ -4,39 +4,49 @@ const conn = require("../config/db.config");
 const bcrypt = require("bcryptjs");
 // Import the user service to get user by email
 const userService = require("./user.service");
+
 // Handle user login
 async function logIn(userData) {
     try {
         let returnData = {}; // Object to be returned
         const user = await userService.getUserByEmail(userData.email);
-        if (user.length === 0) {
-            returnData = {
+
+        // Check if user exists
+        if (!user) {
+            return {
                 status: "fail",
-                message: "user does not exist",
+                message: "User does not exist",
             };
-            return returnData;
         }
+
+        // Compare the provided password with the stored hashed password
         const passwordMatch = await bcrypt.compare(
             userData.password,
             user.password
         );
+        console.log(passwordMatch);
+        console.log(userData.password);
+        console.log(user.password);
+
+        // Check if the password matches
         if (!passwordMatch) {
-            returnData = {
+            return {
                 status: "fail",
                 message: "Incorrect password",
             };
-            return returnData;
         }
 
-        console.log(user);
-        returnData = {
+        // Return success if user is authenticated
+        return {
             status: "success",
             data: user,
         };
-        console.log(returnData);
-        return returnData;
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        return {
+            status: "error",
+            message: "An error occurred during login",
+        };
     }
 }
 
