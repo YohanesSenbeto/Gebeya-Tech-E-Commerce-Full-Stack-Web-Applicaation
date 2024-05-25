@@ -14,7 +14,7 @@ const INITIAL_STATE = {
       title: "High-Performance Tablet",
       description: "A tablet that combines power and mobility.",
       price: "$999.99",
-      imageUrl: "https://ideogram.ai/api/images/direct/15xFfExTQISv52FwLGacAw.jpg",
+      imageUrl: "https://ideogram.ai/api/images/direct/0XIpIG23S7OLY8r15agyzg.jpg",
     },
     {
       id: 3,
