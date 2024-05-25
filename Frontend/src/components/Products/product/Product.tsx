@@ -4,6 +4,7 @@ import styles from "./Product.module.css";
 
 // Redux
 import { connect } from "react-redux";
+import { Button } from "@/components/ui/button";
 import {
   loadCurrentItem,
   addToCart,
