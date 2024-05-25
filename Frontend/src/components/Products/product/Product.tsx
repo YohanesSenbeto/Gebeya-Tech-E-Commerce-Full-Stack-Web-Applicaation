@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import {
   loadCurrentItem,
   addToCart,
-} from "../../../redux/Shopping/shopping-actions";
+} from "../../../redux/shopping/shopping-actions";
 
 const Product = ({ product, addToCart, loadCurrentItem }) => {
   return (
