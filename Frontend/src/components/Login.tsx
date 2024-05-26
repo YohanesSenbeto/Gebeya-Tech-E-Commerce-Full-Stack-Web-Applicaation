@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { logIn } from "./services/loginService";
+import { logIn } from "./services/loginservice";
 
 interface LoginResponse {
     status: number;
@@ -49,16 +49,16 @@ export default function Login() {
         try {
             const data = await logIn({ email, password });
 
-            cosole.log('proooooooooooooooooooooooooooooooo')
-            console.log(data)
-        
-        if (data.status === 200 ) {
-               navigate('/profile')
+            cosole.log("proooooooooooooooooooooooooooooooo");
+            console.log(data);
+
+            if (data.status === 200) {
+                navigate("/profile");
             } else {
                 setServerError(data.message);
             }
         } catch (err) {
-            setServerError('An error has occurred. Please try again later.');
+            setServerError("An error has occurred. Please try again later.");
         }
     };
 
@@ -83,7 +83,10 @@ export default function Login() {
                         </label>
                         <div className="mt-1">
                             {serverError && (
-                                <div className="validation-error text-red-500" role="alert">
+                                <div
+                                    className="validation-error text-red-500"
+                                    role="alert"
+                                >
                                     {serverError}
                                 </div>
                             )}
@@ -95,10 +98,15 @@ export default function Login() {
                                 required
                                 type="email"
                                 value={email}
-                                onChange={(event) => setEmail(event.target.value)}
+                                onChange={(event) =>
+                                    setEmail(event.target.value)
+                                }
                             />
                             {emailError && (
-                                <div className="validation-error text-red-500" role="alert">
+                                <div
+                                    className="validation-error text-red-500"
+                                    role="alert"
+                                >
                                     {emailError}
                                 </div>
                             )}
@@ -120,10 +128,15 @@ export default function Login() {
                             required
                             type="password"
                             value={password}
-                            onChange={(event) => setPassword(event.target.value)}
+                            onChange={(event) =>
+                                setPassword(event.target.value)
+                            }
                         />
                         {passwordError && (
-                            <div className="validation-error text-red-500" role="alert">
+                            <div
+                                className="validation-error text-red-500"
+                                role="alert"
+                            >
                                 {passwordError}
                             </div>
                         )}
@@ -139,7 +152,10 @@ export default function Login() {
                     <div className="text-center">
                         <p className="text-sm text-gray-500">
                             You have no account?
-                            <Link to={'/signup'} className="font-medium text-[#0b1e3b] hover:text-[#0a1a32]">
+                            <Link
+                                to={"/signup"}
+                                className="font-medium text-[#0b1e3b] hover:text-[#0a1a32]"
+                            >
                                 Signup
                             </Link>
                         </p>

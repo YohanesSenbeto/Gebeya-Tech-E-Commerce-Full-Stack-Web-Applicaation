@@ -12,13 +12,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   INDEX (`email`)
 ) ENGINE=InnoDB;
 
--- user tables 
+-- user_roles table
 CREATE TABLE IF NOT EXISTS `user_roles` (
   `user_role_id` INT PRIMARY KEY AUTO_INCREMENT,
   `user_id` INT,
-  `user_role_name` varchar(255) NOT NULL,
-  PRIMARY KEY (user_role_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
+  `user_role_name` VARCHAR(255) NOT NULL,
+  `created_at` DATETIME,
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`)
 ) ENGINE=InnoDB;
 
 

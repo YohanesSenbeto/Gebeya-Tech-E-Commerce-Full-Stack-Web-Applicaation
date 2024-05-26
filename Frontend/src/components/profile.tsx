@@ -1,5 +1,4 @@
 import React from "react";
-import logOut from './services/loginService/logOut';
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import {
     DropdownMenuTrigger,
@@ -28,6 +27,10 @@ import {
     SelectContent,
     Select,
 } from "@/components/ui/select";
+const Logout = (): void => {
+    // Remove user data from localStorage
+    localStorage.removeItem("user");
+};
 
 const Profile: React.FC = () => {
     return (
@@ -59,7 +62,9 @@ const Profile: React.FC = () => {
                             <Link to={"/settings"}>Settings</Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={logOut}>Logout</DropdownMenuItem>
+                        <DropdownMenuItem onClick={Logout}>
+                            Logout
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </header>
