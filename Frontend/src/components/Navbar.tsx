@@ -1,10 +1,11 @@
+//Navbar.tsx
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
 
-import React, {  useEffect } from "react";
-
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import {
@@ -38,31 +39,39 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-const Navbar=({cart}) =>{
-
+const Navbar = ({ cart, isLoggedIn, setIsLoggedIn }) => {
     const [cartCount, setCartCount] = useState(0);
+    const [category, setCategory] = useState("all");
+    const [query, setQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    let count = 0;
-    cart.forEach((item) => {
-      count += item.qty;
-    });
+    const handleCategoryChange = (event) => {
+        setCategory(event.target.value);
+    };
 
-    setCartCount(count);
-  }, [cart, cartCount]);
-    const [selectedCategory, setSelectedCategory] = useState("");
-
-    const handleCategoryChange = async (value) => {
-        setSelectedCategory(value);
-        if (value === "all") {
-            // Fetch all data
-            console.log("Fetching all data...");
-            // Add your fetch logic here
-        } else {
-            // Fetch data for the specific category
-            console.log(`Fetching data for ${value}...`);
-            // Add your fetch logic here
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get(
+                `/api/products/search?category=${category}&query=${query}`
+            );
+            setSearchResults(response.data.data);
+        } catch (error) {
+            console.error(error);
         }
+    };
+
+    useEffect(() => {
+        let count = 0;
+        cart.forEach((item) => {
+            count += item.qty;
+        });
+
+        setCartCount(count);
+    }, [cart, cartCount]);
+
+    const handleLogout = () => {
+        // Implement logout functionality here
+        setIsLoggedIn(false);
     };
 
     return (
@@ -105,9 +114,28 @@ const Navbar=({cart}) =>{
                         <Input
                             className="w-full rounded-md bg-gray-100 pl-10 pr-4 py-2 text-sm focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-50 dark:focus:ring-offset-gray-950"
                             placeholder="Search products ..."
+                            t
                             type="search"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
                         />
-                        <SearchIcon className="h-10 w-10 text-white dark:text-gray-200 text-3xl" />
+
+                        <SearchIcon
+                            onClick={handleSearch}
+                            className="h-10 w-10 text-white dark:text-gray-200 text-3xl"
+                        />
+                        {searchResults.length > 0 && (
+                            <div>
+                                <h2>Search Results</h2>
+                                <ul>
+                                    {searchResults.map((product) => (
+                                        <li key={product.product_id}>
+                                            {product.product_name}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 </form>
             </div>
@@ -204,12 +232,21 @@ const Navbar=({cart}) =>{
                     >
                         About
                     </Link>
-                    <Link
-                        className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                        to="/login"
-                    >
-                        Login
-                    </Link>
+                    {isLoggedIn ? (
+                        <button
+                            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    ) : (
+                        <Link
+                            className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                            to="/login"
+                        >
+                            Login
+                        </Link>
+                    )}
                     <Link
                         className="text-white text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                         to="/contact"
@@ -220,7 +257,7 @@ const Navbar=({cart}) =>{
             </div>
         </header>
     );
-}
+};
 
 function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
@@ -307,11 +344,10 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
     );
 }
 
-
 const mapStateToProps = (state) => {
     return {
-      cart: state.shop.cart,
+        cart: state.shop.cart,
     };
-  };
+};
 
-  export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbar);

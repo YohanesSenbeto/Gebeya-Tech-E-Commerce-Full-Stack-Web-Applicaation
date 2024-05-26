@@ -1,15 +1,26 @@
 // Import the query function from the db.config.js file
-const conn = require("../config/db.config");
+const { query } = require("../config/db.config");
 // Import the bcrypt module
 const bcrypt = require("bcryptjs");
 
 // A function to check if User exists in the database
 async function checkIfUserExists(email) {
-    const query = "SELECT * FROM users WHERE email = ?";
-    const [rows] = await conn.query(query, [email]);
+    const sqlQuery = "SELECT * FROM users WHERE email = ?";
+    try {
+        console.log(`Executing query: ${sqlQuery} with email: ${email}`);
+        const rows = await query(sqlQuery, [email]);
 
-    console.log(rows);
-    return rows.length > 0;
+        if (!rows) {
+            console.error("Database query returned undefined");
+            throw new Error("Database query returned undefined");
+        }
+
+        console.log(`Query result: ${JSON.stringify(rows)}`);
+        return rows.length > 0;
+    } catch (error) {
+        console.error("Error checking if user exists:", error);
+        throw error; // Re-throw the error after logging it
+    }
 }
 
 // A function to create a new User
@@ -19,9 +30,9 @@ async function createUser(UserData) {
         // Generate a salt and hash the password
         const salt = await bcrypt.genSalt(10);
         // Hash the password
-        const hashedPassword = await bcrypt.hash(UserData.password, salt);
+        const hashedPassword = await bcrypt.hash(UserData.password, 10);
 
-        console.log(hashedPassword);
+        console.log(`Hashed password: ${hashedPassword}`);
 
         let user_role_name;
 
@@ -36,7 +47,7 @@ async function createUser(UserData) {
             INSERT INTO users (fullName, username, email, password, gender, phone, active_user, created_at) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `;
-        const [result1] = await conn.query(query1, [
+        const result1 = await query(query1, [
             UserData.fullName,
             UserData.username,
             UserData.email,
@@ -53,9 +64,9 @@ async function createUser(UserData) {
             INSERT INTO user_roles (user_id, user_role_name) 
             VALUES (?, ?)
         `;
-        const [result2] = await conn.query(query2, [user_id, user_role_name]);
+        const result2 = await query(query2, [user_id, user_role_name]);
 
-        console.log(user_role_name);
+        console.log(`User role name: ${user_role_name}`);
 
         if (result2.affectedRows !== 1) {
             return false;
@@ -72,9 +83,9 @@ async function createUser(UserData) {
             roleName: user_role_name,
         };
 
-        console.log(createdUser);
+        console.log(`Created user: ${JSON.stringify(createdUser)}`);
     } catch (err) {
-        console.log(err);
+        console.error("Error creating user:", err);
     }
     // Return the User object
     return createdUser;
@@ -82,7 +93,7 @@ async function createUser(UserData) {
 
 // A function to get User by email
 async function getUserByEmail(userEmail) {
-    const query = `
+    const sqlQuery = `
       SELECT 
         users.user_id,
         users.password,
@@ -101,7 +112,7 @@ async function getUserByEmail(userEmail) {
   `;
 
     try {
-        const [rows] = await conn.query(query, [userEmail]);
+        const rows = await query(sqlQuery, [userEmail]);
 
         if (!rows || rows.length === 0) {
             return null; // User not found
@@ -116,7 +127,7 @@ async function getUserByEmail(userEmail) {
 }
 
 async function getAllUsers() {
-    const query = `
+    const sqlQuery = `
       SELECT 
         users.user_id,
         users.fullName,
@@ -133,7 +144,7 @@ async function getAllUsers() {
   `;
 
     try {
-        const [rows] = await conn.query(query);
+        const rows = await query(sqlQuery);
         return rows;
     } catch (error) {
         console.error("Database query error:", error);

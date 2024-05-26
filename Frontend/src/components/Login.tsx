@@ -1,3 +1,4 @@
+//Login.tsx
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { logIn } from "./services/loginservice";
@@ -12,7 +13,7 @@ interface LoginResponse {
     token: string;
 }
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
     const navigate = useNavigate();
     const location = useLocation();
     const [email, setEmail] = useState("");
@@ -49,16 +50,27 @@ export default function Login() {
         try {
             const data = await logIn({ email, password });
 
-            cosole.log("proooooooooooooooooooooooooooooooo");
-            console.log(data);
+            console.log("Response data:", data);
 
             if (data.status === 200) {
-                navigate("/profile");
+                setIsLoggedIn(true);
+                navigate("/");
             } else {
-                setServerError(data.message);
+                if (data.status === 401) {
+                    setServerError(
+                        "Invalid email or password. Please try again."
+                    );
+                } else {
+                    setServerError(
+                        "An unexpected error occurred. Please try again later."
+                    );
+                }
             }
-        } catch (err) {
-            setServerError("An error has occurred. Please try again later.");
+        } catch (error) {
+            console.error("Login error:", error);
+            setServerError(
+                "An unexpected error occurred. Please try again later."
+            );
         }
     };
 

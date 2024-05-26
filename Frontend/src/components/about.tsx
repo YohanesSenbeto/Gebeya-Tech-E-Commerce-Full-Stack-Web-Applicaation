@@ -1,8 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/U3xB7VF8RJD
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+//about.tsx
 export default function about() {
     return (
         <section className="w-full py-12 md:py-24 lg:py-32">

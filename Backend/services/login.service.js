@@ -1,5 +1,3 @@
-// Import the query function from the db.config.js file
-const conn = require("../config/db.config");
 // Import the bcrypt module to do the password comparison
 const bcrypt = require("bcryptjs");
 // Import the user service to get user by email
@@ -8,7 +6,7 @@ const userService = require("./user.service");
 // Handle user login
 async function logIn(userData) {
     try {
-        let returnData = {}; // Object to be returned
+        // Retrieve user data from the database
         const user = await userService.getUserByEmail(userData.email);
 
         // Check if user exists
@@ -24,9 +22,11 @@ async function logIn(userData) {
             userData.password,
             user.password
         );
-        console.log(passwordMatch);
-        console.log(userData.password);
-        console.log(user.password);
+
+        // Log the comparison result and passwords for debugging
+        console.log("Password Match:", passwordMatch);
+        console.log("Provided Password:", userData.password);
+        console.log("Stored Hashed Password:", user.password);
 
         // Check if the password matches
         if (!passwordMatch) {
@@ -42,7 +42,8 @@ async function logIn(userData) {
             data: user,
         };
     } catch (error) {
-        console.error(error);
+        // Log any errors that occur during login
+        console.error("Error during login:", error);
         return {
             status: "error",
             message: "An error occurred during login",
