@@ -1,3 +1,4 @@
+//profile.tsx
 import React from "react";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import {
