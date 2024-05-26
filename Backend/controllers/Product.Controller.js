@@ -1,6 +1,5 @@
 // ProductController.js
 const ProductService = require("../services/Product.Service");
-
 // Controller functions
 exports.searchProducts = async (req, res) => {
     try {
