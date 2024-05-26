@@ -10,10 +10,10 @@ const loginRoutes = require("./login.routes");
 const orderRoutes = require("./order.routes");
 
 const signupRoutes = require("./signup.routes");
-
-
+const productRoutes = require("./product.Routes");
 
 router.use(signupRoutes);
+router.use(productRoutes);
 // Add the install router to the main router
 router.use(installRouter);
 
