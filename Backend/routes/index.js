@@ -4,11 +4,9 @@ const express = require("express");
 const router = express.Router();
 // Import the install router
 const installRouter = require("./install.routes");
-
 // Import the login routes
 const loginRoutes = require("./login.routes");
 const orderRoutes = require("./order.routes");
-
 const signupRoutes = require("./signup.routes");
 const productRoutes = require("./product.Routes");
 
