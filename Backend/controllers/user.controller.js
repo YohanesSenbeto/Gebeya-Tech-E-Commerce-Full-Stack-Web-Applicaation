@@ -63,7 +63,6 @@ async function getAllUsers(req, res, next) {
         });
     }
 }
-
 // Export the createUser controller
 module.exports = {
     createUser,
