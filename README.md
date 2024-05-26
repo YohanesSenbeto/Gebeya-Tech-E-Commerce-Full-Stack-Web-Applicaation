@@ -3,8 +3,11 @@
 • Setup Instructions:
 
 1. Clone the repository.
+
 2. Install dependencies with npm install.
+
 3. Set up environment variables.
+
 4. Start the development server with npm run dev.
 
     • Usage Guidelines:
