@@ -11,8 +11,7 @@ async function logIn(req, res) {
         const userData = req.body;
         // Call the logIn method from the login service
         const user = await loginService.logIn(userData);
-
-        console.log("usersssssssssssssssssssssssssssssss");
+        // console.log("usersssssssssssssssssssssssssssssss");
         console.log(user);
 
         // If the user is not found
@@ -26,7 +25,7 @@ async function logIn(req, res) {
         // If successful, send a response to the client
         const payload = { user };
 
-        console.log("payload is==============", payload);
+        // console.log("payload is==============", payload);
         const token = jwt.sign(payload, jwtSecret, {
             expiresIn: "24h",
         });
