@@ -4,7 +4,6 @@ const express = require("express");
 const router = express.Router();
 // Import the login controller
 const loginControllers = require("../controllers/login.controller");
-
 // Route for normal users
 router.post("/api/login", loginControllers.logIn);
 
