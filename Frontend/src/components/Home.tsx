@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import ProductList from "./ProductList";
+import ProductList from "./ProductLists";
 export default function Home() {
     return (
         <div className="flex flex-col min-h-[100dvh] dark:bg-[#0B1D38] text-white">
