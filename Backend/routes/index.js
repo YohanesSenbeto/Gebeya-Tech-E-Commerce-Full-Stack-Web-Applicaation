@@ -8,10 +8,12 @@ const installRouter = require("./install.routes");
 const loginRoutes = require("./login.routes");
 const orderRoutes = require("./order.routes");
 const signupRoutes = require("./signup.routes");
-const productRoutes = require("./product.Routes");
-
+// const productRoutes = require("./product.Routes");
+const stripeRoutes = require("./stripe.routes");
+// Add the stripe routes to the main router
+router.use(stripeRoutes);
 router.use(signupRoutes);
-router.use(productRoutes);
+// router.use(productRoutes);
 // Add the install router to the main router
 router.use(installRouter);
 
