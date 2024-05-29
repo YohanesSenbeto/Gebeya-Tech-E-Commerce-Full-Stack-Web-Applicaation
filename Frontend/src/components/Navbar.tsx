@@ -158,19 +158,23 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             </Badge>
                         </Link>
                     </DrawerTrigger>
-                    <DrawerContent className="w-[700px] h-[450px] m-[100px]">
+                    <DrawerContent className="w-[500px] h-[590px] m-[100px]">
                         <DrawerHeader>
                             <DrawerTitle>Cart</DrawerTitle>
                             <DrawerDescription>
                                 Your shopping cart items.
                             </DrawerDescription>
                         </DrawerHeader>
+                        <DrawerDescription className="">
 
                         <CartDropdown items={cartItems} />
+                        </DrawerDescription>
 
-                        <DrawerFooter>
+                        
+
+                        <DrawerFooter className="">
                             <DrawerClose>
-                                <div className="flex justify-between items-center px-50 mt-5">
+                                <div className="mt-10">
                                     <button
                                         onClick={() => navigate("/checkout")}
                                         className=" text-center bg-green-500 text-white px-4 py-2 rounded mt-5 hover:bg-green-600 transition-colors duration-300"
@@ -204,7 +208,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             <Link to="/profile">Profile</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
-                            <Link to="/Eypro">EYproducts</Link>
+                            <Link to="/cart">mycart</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Link to="/gebeyacart">gebeyacart</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Link to="/settings">Settings</Link>
