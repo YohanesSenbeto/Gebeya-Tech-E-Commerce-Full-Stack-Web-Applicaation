@@ -17,7 +17,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^8.4.0",
-    "mysql2": "^3.6.0",
+    "mysql2": "^3.9.8",
     "nodemon": "^3.1.1",
     "sanitize": "^2.1.2",
     "stripe": "^15.8.0"
