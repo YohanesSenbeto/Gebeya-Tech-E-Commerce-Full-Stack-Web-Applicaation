@@ -63,18 +63,10 @@ const CheckoutForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <CardElement className="p-2 border rounded" />
-            <button
-                type="submit"
-                className="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600 transition-colors duration-300"
-                disabled={!stripe || loading}
-            >
-                {loading ? "Processing..." : "Confirm Purchase"}
-            </button>
-
+        
+              
             <PayButton cartItems={cartItems} />
-        </form>
+        
     );
 };
 

@@ -11,11 +11,11 @@ interface PayButtonProps {
     cartItems: CartItem[];
 }
 
-const url = `http://localhost:8000/api`;
+
 
 const PayButton: React.FC<PayButtonProps> = ({ cartItems }) => {
     const handleCheckout = () => {
-        axios.post(`${url}/stripe/create-checkout-session`, {
+        axios.post(`http://ec2-44-219-138-130.compute-1.amazonaws.com:8001/api/stripe/create-checkout-session`, {
                 cartItems,
             })
             .then((response: { data: { url: string } }) => {
@@ -31,7 +31,7 @@ const PayButton: React.FC<PayButtonProps> = ({ cartItems }) => {
             onClick={handleCheckout}
             className="bg-blue-500 text-white p-2 rounded"
         >
-            Check out
+            Pay Now
         </button>
     );
 };
