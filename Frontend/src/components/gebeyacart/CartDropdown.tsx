@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 interface CartItem {
     id: string;
@@ -14,13 +14,14 @@ interface CartDropdownProps {
 }
 
 const CartDropdown: React.FC<CartDropdownProps> = ({ items }) => {
+    const navigate = useNavigate();
     const totalPrice = items.reduce(
         (total, item) => total + item.price * item.quantity,
         0
     );
 
     return (
-        <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg overflow-hidden z-20">
+        <div className="absolute right-0 mt-2 w-100 bg-white rounded-lg shadow-lg overflow-hidden z-20">
             <div className="p-4">
                 {items.length === 0 ? (
                     <p className="text-gray-600">Your cart is empty</p>
@@ -53,12 +54,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ items }) => {
                     <p className="font-semibold text-lg">
                         Total: ${totalPrice}
                     </p>
-                    <Link
-                        to="/checkout"
-                        className="block text-center bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600 transition-colors duration-300"
-                    >
-                        Proceed to Checkout
-                    </Link>
+                   
                 </div>
             </div>
         </div>

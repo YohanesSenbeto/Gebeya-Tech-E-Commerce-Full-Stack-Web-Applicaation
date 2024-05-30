@@ -1,9 +1,12 @@
-//Navbar.tsx
-import { Link } from "react-router-dom";
+// Navbar.tsx
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { RootState } from "./gebeyacart/App/store";
+import CartDropdown from "./gebeyacart/CartDropdown";
 import {
     DropdownMenuTrigger,
     DropdownMenuLabel,
@@ -14,16 +17,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import {
-    DrawerTrigger,
-    DrawerTitle,
-    DrawerDescription,
-    DrawerHeader,
-    DrawerFooter,
-    DrawerContent,
     Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
 } from "@/components/ui/drawer";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
-
 import {
     Select,
     SelectContent,
@@ -35,12 +38,26 @@ import {
 } from "@/components/ui/select";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        setDropdownVisible(false);
+        navigate("/checkout");
+    };
+
+    const cartItems = useSelector((state: RootState) => state.cart.items);
+    const totalItems = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
     const [category, setCategory] = useState("all");
     const [query, setQuery] = useState("");
     const [searchResults, setSearchResults] = useState([]);
 
-    const handleCategoryChange = (event) => {
-        setCategory(event.target.value);
+    const handleCategoryChange = (value: string) => {
+        setCategory(value);
     };
 
     const handleSearch = async () => {
@@ -60,7 +77,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     };
 
     return (
-        <header className="bg-sky-950 text-white flex h-16 w-full items-center justify-between px-6 shadow-md dark:bg-gray-950 bg-color ">
+        <header className="bg-sky-950 text-white flex h-16 w-full items-center justify-between px-6 shadow-md dark:bg-gray-950 bg-color">
             <Link
                 className="flex items-center gap-2 font-semibold text-lg"
                 to="/"
@@ -106,7 +123,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
                         <SearchIcon
                             onClick={handleSearch}
-                            className="h-10 w-10 text-white dark:text-gray-200 text-3xl"
+                            className="h-10 w-10 text-white dark:text-gray-200 text-3xl cursor-pointer"
                         />
                         {searchResults.length > 0 && (
                             <div>
@@ -130,37 +147,42 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             className="relative text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                             to="#"
                         >
-                            <ShoppingCartIcon className="text-white h-6 w-6" />
-                            <Badge className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-yellow text-white bg-white">
-                                <p className="text-amber-700">{1}</p>
+                            <ShoppingCartIcon
+                                onClick={() =>
+                                    setDropdownVisible(!dropdownVisible)
+                                }
+                                className="relative text-white h-6 w-6"
+                            />
+                            <Badge className="absolute -top-2 -right-2 flex h-5 w-6 items-center justify-center rounded-full bg-red-600 text-white text-xs font-bold">
+                                <p className="text-white">{totalItems}</p>
                             </Badge>
                         </Link>
                     </DrawerTrigger>
-                    <DrawerContent className="w-[700px] h-[450px] m-[100px]">
+                    <DrawerContent className="w-[500px] h-[590px] m-[100px]">
                         <DrawerHeader>
                             <DrawerTitle>Cart</DrawerTitle>
                             <DrawerDescription>
                                 Your shopping cart items.
                             </DrawerDescription>
                         </DrawerHeader>
-                        <div className="px-4">
-                            <div className="grid gap-4 max-h-[200px] overflow-y-auto">
-                                {/* Cart items here */}
-                            </div>
-                        </div>
-                        <DrawerFooter>
-                            <div className="flex items-center justify-between">
-                                <span className="font-medium">Total:</span>
-                                <span className="font-medium bg-blue pr-12">
-                                    $104.97
-                                </span>
-                            </div>
-                            <div className="flex gap-2 mt-4">
-                                <Button>Checkout</Button>
-                                <Button variant="outline">
-                                    Continue Shopping
-                                </Button>
-                            </div>
+                        <DrawerDescription className="">
+
+                        <CartDropdown items={cartItems} />
+                        </DrawerDescription>
+
+                        
+
+                        <DrawerFooter className="">
+                            <DrawerClose>
+                                <div className="mt-10">
+                                    <button
+                                        onClick={() => navigate("/checkout")}
+                                        className=" text-center bg-green-500 text-white px-4 py-2 rounded mt-5 hover:bg-green-600 transition-colors duration-300"
+                                    >
+                                        Proceed to Checkout
+                                    </button>
+                                </div>
+                            </DrawerClose>
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
@@ -186,7 +208,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             <Link to="/profile">Profile</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
-                            <Link to="/Eypro">EYproducts</Link>
+                            <Link to="/cart">mycart</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Link to="/gebeyacart">gebeyacart</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Link to="/settings">Settings</Link>
@@ -327,4 +352,5 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
+
 export default Navbar;
