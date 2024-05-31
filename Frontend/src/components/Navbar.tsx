@@ -166,11 +166,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             </DrawerDescription>
                         </DrawerHeader>
                         <DrawerDescription className="">
-
-                        <CartDropdown items={cartItems} />
+                            <CartDropdown items={cartItems} />
                         </DrawerDescription>
-
-                        
 
                         <DrawerFooter className="">
                             <DrawerClose>
@@ -194,10 +191,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Avatar className="h-8 w-8 border border-gray-200 dark:border-gray-800 text-black">
-                            <AvatarImage
-                                alt="@shadcn"
-                                src="https://avatars.githubusercontent.com/u/121575345?v=4"
-                            />
+                            <AvatarImage alt="@shadcn" src="" />
                             <AvatarFallback>U</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
