@@ -6,7 +6,10 @@ import { RootState } from "./App/store";
 const CheckoutSuccess: React.FC = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootState) => state.cart.items);
-    const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalPrice = cartItems.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+    );
 
     useEffect(() => {
         dispatch(clearCart());
@@ -27,15 +30,23 @@ const CheckoutSuccess: React.FC = () => {
                         clipRule="evenodd"
                     />
                 </svg>
-                <h2 className="text-2xl font-semibold text-green-600 mb-2">Checkout Successful!</h2>
-                <p className="text-lg text-gray-700 mb-4">Your order total is <strong>${totalPrice.toFixed(2)}</strong></p>
-                <p className="text-gray-600 mb-2">Your order might take some time to process.</p>
+                <h2 className="text-2xl font-semibold text-green-600 mb-2">
+                    Checkout Successful!
+                </h2>
+                <p className="text-lg text-gray-700 mb-4">
+                    Your order total is{" "}
+                    <strong>${totalPrice.toFixed(2)}</strong>
+                </p>
+                <p className="text-gray-600 mb-2">
+                    Your order might take some time to process.
+                </p>
                 <p className="text-gray-600 mb-4">
-                    Check your order status in your profile after about 10 minutes.
+                    Check your order status in your profile after about 10
+                    minutes.
                 </p>
                 <p className="text-gray-600">
                     In case of any inquiries, contact support at{" "}
-                    <strong>support@onlineshop.com</strong>
+                    <strong>support@gebeyatech.com</strong>
                 </p>
             </div>
         </div>
