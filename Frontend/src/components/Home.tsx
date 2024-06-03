@@ -162,7 +162,7 @@ export default function Home() {
                                         alt="Brand Logo"
                                         className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                                         height="70"
-                                        src="/placeholder.svg"
+                                        src="https://th.bing.com/th/id/OIP.XPLzlxtVO34jxU3VwfGtNwHaJF?rs=1&pid=ImgDetMain"
                                         width="140"
                                     />
                                 </div>
@@ -171,7 +171,7 @@ export default function Home() {
                                         alt="Brand Logo"
                                         className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                                         height="70"
-                                        src="/placeholder.svg"
+                                        src="https://clipartcraft.com/images/samsung-logo-icon-3.png"
                                         width="140"
                                     />
                                 </div>
@@ -180,7 +180,34 @@ export default function Home() {
                                         alt="Brand Logo"
                                         className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                                         height="70"
-                                        src="/placeholder.svg"
+                                        src="https://th.bing.com/th/id/OIP.gdEGm42jbUfJvggymXRDYgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain"
+                                        width="140"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <img
+                                        alt="Brand Logo"
+                                        className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                                        height="70"
+                                        src="https://th.bing.com/th/id/OIP.H7tPtxTzn8Ar-oiePOdw9gHaHa?rs=1&pid=ImgDetMain"
+                                        width="140"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <img
+                                        alt="Brand Logo"
+                                        className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                                        height="70"
+                                        src="https://th.bing.com/th/id/OIP.g44k0nU7Wze1ddfFHNKzRQHaHa?rs=1&pid=ImgDetMain"
+                                        width="140"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <img
+                                        alt="Brand Logo"
+                                        className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                                        height="70"
+                                        src="https://th.bing.com/th/id/R.14ba1f2e3c6c22fd190f8ea288131caf?rik=CFjfkDnIqcffow&pid=ImgRaw&r=0"
                                         width="140"
                                     />
                                 </div>
