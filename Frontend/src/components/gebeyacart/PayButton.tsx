@@ -11,11 +11,10 @@ interface PayButtonProps {
     cartItems: CartItem[];
 }
 
-
-
 const PayButton: React.FC<PayButtonProps> = ({ cartItems }) => {
     const handleCheckout = () => {
-        axios.post(`http://ec2-44-219-138-130.compute-1.amazonaws.com:8001/api/stripe/create-checkout-session`, {
+        axios
+            .post(http://localhost:8000/api/stripe/create-checkout-session, {
                 cartItems,
             })
             .then((response: { data: { url: string } }) => {
