@@ -10,13 +10,18 @@ type User = {
 
 // Function to read the data from the user's local storage  
 const getAuth = async () => {
+    const token = JSON.parse(localStorage.getItem('token') || '{}');
     const user: User = JSON.parse(localStorage.getItem('user') || '{}');
-    if (user && user.user_token) {
-      const decodedToken = await decodeTokenPayload(user.user_token);
-      user.user_role = decodedToken.user_role;
-      user.user_id = decodedToken.user_id;
-      user.user_fullName = decodedToken.user_fullName;
-      return user;
+    console.log(user.data)
+    if (user && token) {
+      const decodedToken = await decodeTokenPayload(token);
+      console.log(decodedToken)
+      const user_data_from_token = decodedToken.user.data
+      
+
+      
+      console.log(user_data_from_token)
+      return user_data_from_token;
     } else {
       return {};
     }
