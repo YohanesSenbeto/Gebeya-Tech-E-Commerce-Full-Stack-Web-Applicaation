@@ -2,10 +2,16 @@ const stripeService = require("../services/stripe.service");
 
 const createCheckoutSession = async (req, res) => {
     try {
+        console.log(req.body)
         const session = await stripeService.createCheckoutSession(req.body);
         res.send({ url: session.url });
     } catch (err) {
-        res.status(500).send({ error: err.message });
+        res.status(500).send({ error: err.message,
+            messege: "Error in creating checkout session" 
+
+
+
+        });
     }
 };
 
