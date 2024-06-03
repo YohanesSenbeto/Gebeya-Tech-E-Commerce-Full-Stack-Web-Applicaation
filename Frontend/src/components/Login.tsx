@@ -13,7 +13,7 @@ interface LoginResponse {
     token: string;
 }
 
-export default function Login({ setIsLoggedIn }) {
+export default function Login({}) {
     const navigate = useNavigate();
     const location = useLocation();
     const [email, setEmail] = useState("");
@@ -53,8 +53,8 @@ export default function Login({ setIsLoggedIn }) {
             console.log("Response data:", data);
 
             if (data.status === 200) {
-                setIsLoggedIn(true);
-                navigate("/");
+                
+                navigate("/profile");
             } else {
                 if (data.status === 401) {
                     setServerError(
