@@ -130,7 +130,7 @@ const ProductList: React.FC = () => {
           <img
            src={product.image}
            alt={product.name}
-            alt="Product Image"
+            
             className="w-full h-60 object-cover"
             height="300"
             
