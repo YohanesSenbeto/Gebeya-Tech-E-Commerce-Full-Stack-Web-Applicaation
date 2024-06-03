@@ -37,7 +37,7 @@ const createCheckoutSession = async (data) => {
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         shipping_address_collection: {
-            allowed_countries: ["US", "CA", "KE"],
+            allowed_countries: ["US", "CA", "ET"],
         },
         shipping_options: [
             {
