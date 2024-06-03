@@ -1,6 +1,6 @@
 // Import from the env
 //userservice.tsx
-const api_url = `http://localhost:8000`;
+
 
 // A function to send post request to create a new User
 const createUser = async (formData, loggedInUserToken: string) => {
@@ -13,13 +13,15 @@ const createUser = async (formData, loggedInUserToken: string) => {
         body: JSON.stringify(formData),
     };
     console.log(requestOptions);
-    const response = await fetch(`${api_url}/api/signup`, requestOptions);
+    console.log(import.meta.env);
+
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/signup`, requestOptions);
     return response;
 };
 
 // A function to send get request to get all Users
 const getAllUsers = async (token) => {
-    // console.log(token);
+    console.log(token);
     const requestOptions = {
         method: "GET",
         headers: {
@@ -27,7 +29,7 @@ const getAllUsers = async (token) => {
             "x-access-token": token,
         },
     };
-    const response = await fetch(`${api_url}/api/Users`, requestOptions);
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/getAllUsers`, requestOptions);
     return response;
 };
 
