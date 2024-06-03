@@ -25,15 +25,16 @@ async function logIn(req, res) {
         // If successful, send a response to the client
         const payload = { user };
 
-        // console.log("payload is==============", payload);
+        console.log("payload is==============", payload);
         const token = jwt.sign(payload, jwtSecret, {
             expiresIn: "24h",
         });
 
         const sendBack = {
             user_token: token,
-            user,
+            user:user,
         };
+        
 
         return res.status(200).json({
             status: "success",
