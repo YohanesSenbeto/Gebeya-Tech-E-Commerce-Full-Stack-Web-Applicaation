@@ -23,7 +23,7 @@ const logIn = async (formData: LoginForm): Promise<Response> => {
         const user = data.data.user;
 
         // Store the token and user data (e.g., in localStorage or state management)
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", JSON.stringify(token));
         localStorage.setItem("user", JSON.stringify(user));
         console.log("User logged in successfully", user);
     } else {
@@ -35,6 +35,7 @@ const logIn = async (formData: LoginForm): Promise<Response> => {
 // A function to log out the user
 const logOut = (): void => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
 };
 export default logOut;
 // Export the functions
