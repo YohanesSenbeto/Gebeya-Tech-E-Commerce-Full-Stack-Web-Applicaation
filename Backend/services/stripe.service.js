@@ -37,7 +37,7 @@ const createCheckoutSession = async (data) => {
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         shipping_address_collection: {
-            allowed_countries: ["US", "CA", "ET"],
+            allowed_countries: ["US", "CA", "KE"],
         },
         shipping_options: [
             {
@@ -136,7 +136,9 @@ const handleWebhook = async (req) => {
                 webhookSecret
             );
         } catch (err) {
-            throw new Error(`Webhook signature verification failed: ${err.message}`);
+            throw new Error(
+                `Webhook signature verification failed: ${err.message}`
+            );
         }
         data = event.data.object;
         eventType = event.type;
