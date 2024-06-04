@@ -308,4 +308,5 @@
 -   package.json: Contains metadata about the project and its dependencies.
 
 -   stripe.tsx: Uncommon to see .tsx in the backend, might be related to handling Stripe with TypeScript.
-    D:\ALX Final project\Gebeya-Tech-E-Commerce-Full-Stack-Web-Application\image.png
+ ![screencapture-localhost-5173-productList-2024-06-04-18_04_30](https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application/assets/121575345/b6e83c66-fe8b-4664-a7b6-5b501fd87697)
+
