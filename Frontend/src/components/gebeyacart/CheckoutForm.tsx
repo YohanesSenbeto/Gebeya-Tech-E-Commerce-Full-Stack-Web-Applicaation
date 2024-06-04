@@ -62,12 +62,7 @@ const CheckoutForm: React.FC = () => {
         setLoading(false);
     };
 
-    return (
-        
-              
-            <PayButton cartItems={cartItems} />
-        
-    );
+    return <PayButton cartItems={cartItems} />;
 };
 
 export default CheckoutForm;
