@@ -1,82 +1,80 @@
 # Gebeya-Tech-E-Commerce-Full-Stack-Web-Applicaation
 
-# Setup Instructions:
+-   Setup Instructions:
 
-<h1> Frontend Installation:</h1>
+# Frontend Installation:
 
-# Clone the Frontend Repository
+-   Clone the Frontend Repository
 
-git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
+-   git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
 
 # Navigate to the Frontend Directory
 
-cd frontend
+-   cd frontend
 
 # Install Frontend Dependencies
 
-npm install
+-   npm install
 
 # Start the Frontend Development Server
 
-npm run dev
+-   npm run dev
 
-<h1>Backend Installation:</h1>
+# Backend Installation:
 
 # Clone the Backend Repository
 
-git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
+-   git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
 
 # Navigate to the Backend Directory
 
-cd backend
+-   cd backend
 
 # Install Backend Dependencies
 
-npm install
+-   npm install
 
 # Start the Backend Server
 
-npm start
+-   npm start
 
-    <h1>Key Achievements:</h1>
+# Key Achievements:
 
-# User authentication and authorization
+-   User authentication and authorization
 
-# CRUD operations for products and users
+-   CRUD operations for products and users
 
-# Responsive design and user-friendly interface
+-   Responsive design and user-friendly interface
 
-# Comprehensive API documentation with examples
+-   Comprehensive API documentation with examples
 
-# integrated with stripe payment gateway
+-   integrated with stripe payment gateway
 
-<h1>Usage Guidelines:</h1>
+# Usage Guidelines:
 
-# Register or log in to your account.
+-   Register or log in to your account.
 
-# Browse the list of Gebeya-Tech-products.
+-   Browse the list of Gebeya-Tech-products.
 
-# Add a new New products and sale.
+-   Add a new New products and sale.
 
-# Edit or delete your products.
+# Development Process:
 
-<h1> Development Process:</h1>
+-   Initial planning and wireframing
 
-# Initial planning and wireframing
+-   Setting up the project repository
 
-# Setting up the project repository
+-   Developing the back-end API
 
-# Developing the back-end API
+-   Creating the front-end components and integrating with the API
 
-# Creating the front-end components and integrating with the API
+-   Conducting user testing and feedback sessions
 
-# Conducting user testing and feedback sessions
+-   Finalizing and styling the application
 
-# Finalizing and styling the application
+# GitHub Repository Structure:
 
-<h1>GitHub Repository Structure:</h1>
-
-# Gebeya-Tech-E-Commerce-Full-Stack-Web-Application\Frontend
+-   Gebeya-Tech-E-Commerce-Full-Stack-Web-Application\Frontend
 
 <p>
 ├── node_modules/
@@ -218,96 +216,95 @@ npm start
 </p>
 <h3> Explanation </h3>
 
-# config/: Contains configuration files.
+-   config/: Contains configuration files.
 
-# db.config.js: Configuration for the database connection.
+-   db.config.js: Configuration for the database connection.
 
-# multer.config.js: Configuration for Multer, a middleware for handling multipart/form-data, used for uploading files.
+-   multer.config.js: Configuration for Multer, a middleware for handling multipart/form-data, used for uploading files.
 
-# controllers/: Contains controller files that handle the logic for various parts of the application.
+-   controllers/: Contains controller files that handle the logic for various parts of the application.
 
-# cart.controller.js: Manages shopping cart operations.
+-   cart.controller.js: Manages shopping cart operations.
 
-# image.controller.js: Manages image-related operations.
+-   image.controller.js: Manages image-related operations.
 
-# install.controller.js: Handles initial setup or installation operations.
+-   install.controller.js: Handles initial setup or installation operations.
 
-# login.controller.js: Manages login operations.
+-   login.controller.js: Manages login operations.
 
-# order.controller.js: Manages order-related operations.
+-   order.controller.js: Manages order-related operations.
 
-# Product.Controller.js: Manages product-related operations.
+-   Product.Controller.js: Manages product-related operations.
 
-# stripe.controller.js: Manages Stripe payment operations.
+-   stripe.controller.js: Manages Stripe payment operations.
 
-# user.controller.js: Manages user-related operations.
+-   user.controller.js: Manages user-related operations.
 
-# middlewares/: Contains middleware functions executed during the request-response cycle.
+-   middlewares/: Contains middleware functions executed during the request-response cycle.
 
-# auth.middleware.js: Middleware for authentication.
+-   auth.middleware.js: Middleware for authentication.
 
-# models/: Contains database models or schemas.
+-   models/: Contains database models or schemas.
 
-# imageModel.js: Schema for images.
+-   imageModel.js: Schema for images.
 
-# Order.js: Schema for orders.
+-   Order.js: Schema for orders.
 
-# node_modules/: Directory where npm packages are installed (auto-generated by npm install).
+-   node_modules/: Directory where npm packages are installed (auto-generated by npm install).
 
-# routes/: Contains route definitions that map to controllers.
+-   routes/: Contains route definitions that map to controllers.
 
-# image.routes.js: Routes for image operations.
+-   image.routes.js: Routes for image operations.
 
-# index.js: Main router file that consolidates all routes.
+-   index.js: Main router file that consolidates all routes.
 
-# install.routes.js: Routes for installation operations.
+-   install.routes.js: Routes for installation operations.
 
-# login.routes.js: Routes for login operations.
+-   login.routes.js: Routes for login operations.
 
-# order.routes.js: Routes for order operations.
+-   order.routes.js: Routes for order operations.
 
-# product.routes.js: Routes for product operations.
+-   product.routes.js: Routes for product operations.
 
-# signup.routes.js: Routes for user signup operations.
+-   signup.routes.js: Routes for user signup operations.
 
-# stripe.routes.js: Routes for Stripe payment operations.
+-   stripe.routes.js: Routes for Stripe payment operations.
 
-# users.route.js: Routes for user-related operations.
+-   users.route.js: Routes for user-related operations.
 
-# services/: Contains service files that handle business logic and interactions with the database.
+-   services/: Contains service files that handle business logic and interactions with the database.
 
-# sql/: Subdirectory for SQL-related services.
+-   sql/: Subdirectory for SQL-related services.
 
-# image.service.js: Service logic for image operations.
+-   image.service.js: Service logic for image operations.
 
-# install.service.js: Service logic for installation operations.
+-   install.service.js: Service logic for installation operations.
 
-# login.service.js: Service logic for login operations.
+-   login.service.js: Service logic for login operations.
 
-# order.service.js: Service logic for order operations.
+-   order.service.js: Service logic for order operations.
 
-# Product.Service.js: Service logic for product operations.
+-   Product.Service.js: Service logic for product operations.
 
-# stripe.service.js: Service logic for Stripe payment operations.
+-   stripe.service.js: Service logic for Stripe payment operations.
 
-# user.service.js: Service logic for user operations.
+-   user.service.js: Service logic for user operations.
+-   uploads/: Directory for storing uploaded files.
 
-# uploads/: Directory for storing uploaded files.
+-   .env: Environment variables configuration file.
 
-# .env: Environment variables configuration file.
+-   .env.production: Environment variables configuration file for the production environment.
 
-# .env.production: Environment variables configuration file for the production environment.
+-   .gitignore: Specifies which files and directories to ignore in version control.
 
-# .gitignore: Specifies which files and directories to ignore in version control.
+-   app.js: The main entry point of the backend application.
 
-# app.js: The main entry point of the backend application.
+-   db.txt: Potentially a database-related file (could be a dump or configuration).
 
-# db.txt: Potentially a database-related file (could be a dump or configuration).
+-   mongoConnection.js: Configuration and connection setup for MongoDB.
 
-# mongoConnection.js: Configuration and connection setup for MongoDB.
+-   package-lock.json: Automatically generated file for locking the dependency versions.
 
-# package-lock.json: Automatically generated file for locking the dependency versions.
+-   package.json: Contains metadata about the project and its dependencies.
 
-# package.json: Contains metadata about the project and its dependencies.
-
-# stripe.tsx: Uncommon to see .tsx in the backend, might be related to handling Stripe with TypeScript.
+-   stripe.tsx: Uncommon to see .tsx in the backend, might be related to handling Stripe with TypeScript.
