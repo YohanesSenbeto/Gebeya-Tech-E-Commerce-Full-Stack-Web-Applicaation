@@ -308,3 +308,5 @@
 -   package.json: Contains metadata about the project and its dependencies.
 
 -   stripe.tsx: Uncommon to see .tsx in the backend, might be related to handling Stripe with TypeScript.
+    ![alt text](image.png)
+    ![alt text](screencapture-localhost-5173-productList-2024-06-04-18_04_30.png)
