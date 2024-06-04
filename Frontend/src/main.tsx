@@ -1,11 +1,27 @@
-//main.tsx for all
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
+import Start from "./start";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./components/Contexts/AuthContext";
+import { Provider } from "react-redux";
+import store from "./components/gebeyacart/App/store";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
     <React.StrictMode>
-        <App />
+      <BrowserRouter>
+        <AuthProvider>
+          <Provider store={store}>
+            <Start />
+          </Provider>
+        </AuthProvider>
+      </BrowserRouter>
     </React.StrictMode>
-);
+  );
+} else {
+  console.error("Root element not found");
+}

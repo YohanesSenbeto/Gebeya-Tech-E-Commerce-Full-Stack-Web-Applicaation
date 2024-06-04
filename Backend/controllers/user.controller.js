@@ -55,6 +55,7 @@ async function getAllUsers(req, res, next) {
                 status: "success",
                 data: Users,
             });
+            console.log(`from get all users${Users}`);
         }
     } catch (error) {
         console.error("Error getting all users:", error);

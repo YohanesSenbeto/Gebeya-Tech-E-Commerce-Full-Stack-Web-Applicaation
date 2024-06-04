@@ -136,7 +136,9 @@ const handleWebhook = async (req) => {
                 webhookSecret
             );
         } catch (err) {
-            throw new Error(`Webhook signature verification failed: ${err.message}`);
+            throw new Error(
+                `Webhook signature verification failed: ${err.message}`
+            );
         }
         data = event.data.object;
         eventType = event.type;

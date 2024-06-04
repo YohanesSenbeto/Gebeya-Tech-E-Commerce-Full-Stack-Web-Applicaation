@@ -1,5 +1,22 @@
 import React, { useState, useEffect, useContext, ReactNode } from "react";
-import getAuth from '../util/auth';
+import getAuth from '../../util/auth';
+
+// Define the User type based on the provided user data structure
+interface User {
+  active_user: number;
+  created_at: string;
+  email: string;
+  full_name: string;
+  gender: string;
+  password: string;
+  phone: string;
+  role_name: string;
+  user_id: number;
+  user_role_id: number;
+  username: string;
+  user_token: string; // Assuming user_token is also a property returned by getAuth
+  user_role: string;  // Assuming user_role is also a property returned by getAuth
+}
 
 type AuthContextType = {
   isLogged: boolean;
@@ -17,7 +34,7 @@ export const useAuth = (): AuthContextType => {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-}
+};
 
 type AuthProviderProps = {
   children: ReactNode;
@@ -28,20 +45,28 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
 
-  const value = { isLogged, isAdmin, setIsAdmin, setIsLogged, user };
-
   useEffect(() => {
-    const loggedInuser = getAuth();
-    loggedInuser.then((response: User) => {
-      if (response.user_token) {
-        setIsLogged(true);
-        if (response.user_role === '3') {
-          setIsAdmin(true);
+    const fetchUser = async () => {
+      try {
+        const response: User = await getAuth();
+        const userData = { ...response }; // Destructure the response and save it in userData
+        
+        if (userData.user_token) {
+          setIsLogged(true);
+          if (userData.user_role === '3') {
+            setIsAdmin(true);
+          }
+          setUser(userData);
         }
-        setUser(response);
+      } catch (error) {
+        console.error("Failed to fetch user:", error);
       }
-    });
+    };
+
+    fetchUser();
   }, []);
+
+  const value = { isLogged, isAdmin, setIsAdmin, setIsLogged, user };
 
   return (
     <AuthContext.Provider value={value}>

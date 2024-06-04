@@ -1,8 +1,7 @@
 //Home.tsx
-
+//import BackendPro from './services/BackendPro';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import ProductList from "./gebeyacart/ProductList";
 export default function Home() {
     return (
         <div className="flex flex-col min-h-[100dvh] dark:bg-[#0B1D38] text-white">
@@ -44,9 +43,11 @@ export default function Home() {
                             <h1 className="text-3xl font-bold text-center mb-8 text-white">
                                 Product Listings
                             </h1>
+                            
                         </div>
+                        
                     </div>
-                    <ProductList />
+                    
                 </section>
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-[#0B1D38]">
                     <div className="container px-4 md:px-6">

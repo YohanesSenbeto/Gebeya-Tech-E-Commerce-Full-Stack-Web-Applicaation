@@ -44,7 +44,7 @@ async function createUser(UserData) {
 
         // Insert the remaining data into the User_info, User_pass, and User_role tables
         const query1 = `
-            INSERT INTO users (fullName, username, email, password, gender, phone, active_user, created_at) 
+            INSERT INTO users (full_name, username, email, password, gender, phone, active_user, created_at) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const result1 = await query(query1, [
@@ -61,12 +61,21 @@ async function createUser(UserData) {
         const user_id = result1.insertId;
 
         const query2 = `
-            INSERT INTO user_roles (user_id, user_role_name) 
-            VALUES (?, ?)
+            INSERT INTO user_roles (user_id, user_role_id,role_name) 
+            VALUES (?, ?, ?)
         `;
-        const result2 = await query(query2, [user_id, user_role_name]);
+
+        if(user_role_name === 'admin') {
+            user_role_id = 2;
+        } else {
+            user_role_id = 1;}
+
+        const result2 = await query(query2, [user_id, user_role_id, user_role_name]);
 
         console.log(`User role name: ${user_role_name}`);
+
+
+        console.log('user inserted========================')
 
         if (result2.affectedRows !== 1) {
             return false;
@@ -97,7 +106,7 @@ async function getUserByEmail(userEmail) {
       SELECT 
         users.user_id,
         users.password,
-        users.fullName,
+        users.full_name,
         users.email,
         users.username,
         users.phone,
@@ -105,12 +114,12 @@ async function getUserByEmail(userEmail) {
         users.active_user,
         users.created_at,
         user_roles.user_role_id,
-        user_roles.user_role_name
+        user_roles.role_name
       FROM users 
       INNER JOIN user_roles ON users.user_id = user_roles.user_id
       WHERE users.email = ?
   `;
-
+console.log('**************')
     try {
         const rows = await query(sqlQuery, [userEmail]);
 
@@ -126,11 +135,13 @@ async function getUserByEmail(userEmail) {
     }
 }
 
+console.log('*********getall***users*********************')
+
 async function getAllUsers() {
     const sqlQuery = `
       SELECT 
         users.user_id,
-        users.fullName,
+        users.full_name,
         users.email,
         users.username,
         users.phone,
@@ -138,18 +149,22 @@ async function getAllUsers() {
         users.active_user,
         users.created_at,
         user_roles.user_role_id,
-        user_roles.user_role_name
+        user_roles.role_name
       FROM users
       INNER JOIN user_roles ON users.user_id = user_roles.user_id
   `;
 
     try {
         const rows = await query(sqlQuery);
+
+        console.log(rows)
         return rows;
     } catch (error) {
         console.error("Database query error:", error);
         throw error; // Re-throw the error after logging it
     }
+
+    console.log('$$$$$$$===========$$$$$$$$$$$')
 }
 
 // Export the functions for use in the controller
