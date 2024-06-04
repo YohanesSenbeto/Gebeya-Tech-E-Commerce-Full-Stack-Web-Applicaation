@@ -14,7 +14,7 @@ interface PayButtonProps {
 const PayButton: React.FC<PayButtonProps> = ({ cartItems }) => {
     const handleCheckout = () => {
         axios
-            .post(http://localhost:8000/api/stripe/create-checkout-session, {
+            .post(`http://localhost:8000/api/stripe/create-checkout-session`, {
                 cartItems,
             })
             .then((response: { data: { url: string } }) => {
