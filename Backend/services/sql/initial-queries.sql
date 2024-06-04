@@ -174,3 +174,4 @@ VALUES
 ('Samsung 4-Door Flex Refrigerator', 'Samsung 4-Door Flex Refrigerator with Family Hub - Stainless Steel', 8, 'samsungrefrigerator.jpg', 2999.99, 5, 'available', 'Samsung, Refrigerator, Home Appliance', CURRENT_TIMESTAMP),
 ('Sony PlayStation 5', 'Sony PlayStation 5 Console - Ultra HD Blu-ray Edition', 9, 'playstation5.jpg', 499.99, 20, 'available', 'Sony, PlayStation, Gaming Console', CURRENT_TIMESTAMP),
 ('Google Nest Wifi', 'Google Nest Wifi - AC2200 - Mesh Wi-Fi System - 2 Pack', 10, 'googlenestwifi.jpg', 299.99, 15, 'available', 'Google, Nest, Router', CURRENT_TIMESTAMP);
+
