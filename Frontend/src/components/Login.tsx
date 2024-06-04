@@ -53,8 +53,7 @@ export default function Login({}) {
             console.log("Response data:", data);
 
             if (data.status === 200) {
-                
-                navigate("/profile");
+                navigate("/BackendPro");
             } else {
                 if (data.status === 401) {
                     setServerError(
