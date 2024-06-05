@@ -6,8 +6,8 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 
 const createCheckoutSession = async (data) => {
     const cartItems = data.cartItems.map((item) => ({
-        id: item.id,
-        name: item.name,
+        id: item.product_id,
+        name: item.product_name,
         qty: item.quantity,
     }));
 
@@ -22,11 +22,11 @@ const createCheckoutSession = async (data) => {
         price_data: {
             currency: "usd",
             product_data: {
-                name: item.name,
-                images: [item.image],
+                name: item.product_name,
+                images: [item.image_url],
                 description: item.description,
                 metadata: {
-                    id: item.id,
+                    id: item.product_id,
                 },
             },
             unit_amount: item.price * 100,
@@ -37,7 +37,7 @@ const createCheckoutSession = async (data) => {
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         shipping_address_collection: {
-            allowed_countries: ["US", "CA", "KE"],
+            allowed_countries: ["US","ET"],
         },
         shipping_options: [
             {
@@ -98,7 +98,7 @@ const createOrder = async (customer, data) => {
     const items = JSON.parse(customer.metadata.cart);
 
     const products = items.map((item) => ({
-        productId: item.id,
+        productId: item.product_id,
         quantity: item.qty,
     }));
 
@@ -112,6 +112,8 @@ const createOrder = async (customer, data) => {
         shipping: data.customer_details,
         payment_status: data.payment_status,
     });
+
+    console.log(`order is ${newOrder}`)
 
     try {
         const savedOrder = await newOrder.save();
