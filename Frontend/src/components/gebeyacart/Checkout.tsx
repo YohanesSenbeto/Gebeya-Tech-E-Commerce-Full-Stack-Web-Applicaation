@@ -1,9 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { loadStripe } from '@stripe/stripe-js';
 import { RootState } from "./App/store";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
-import stripePromise from "./stripe";
+import PayButton from './PayButton';
+//import stripePromise from "./stripe";
+
+
+
+const stripePromise = loadStripe('pk_test_51OVLc2HjxnpOvxRWl5YIZ6YlWUdabpFjF1hHlMRS0aNUBrY4LdCjd4jTKgvToLjzeuKhKHePgJosQokqtXu9RL8V002dPdJwiw');
 
 const Checkout: React.FC = () => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -23,11 +29,11 @@ const Checkout: React.FC = () => {
                     <ul className="space-y-4">
                         {cartItems.map((item) => (
                             <li
-                                key={item.id}
+                                key={item.product_id}
                                 className="flex justify-between items-center p-2 border rounded"
                             >
                                 <div>
-                                    <p className="font-semibold">{item.name}</p>
+                                    <p className="font-semibold">{item.product_name}</p>
                                     <p className="text-sm text-gray-600">
                                         Quantity: {item.quantity}
                                     </p>
@@ -35,7 +41,8 @@ const Checkout: React.FC = () => {
                                 <p>${item.price * item.quantity}</p>
                             </li>
                         ))}
-                    </ul>
+                        </ul>
+                         <PayButton cartItems={cartItems} />
                     <div className="mt-4">
                         <p className="text-xl font-bold">
                             Total: ${totalPrice}
@@ -43,8 +50,14 @@ const Checkout: React.FC = () => {
                     </div>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm />
-                    </Elements>
-                </div>
+                    <PayButton cartItems={cartItems} />
+                        </Elements>
+                        
+                    </div>
+                  
+                    
+                    
+
             )}
         </div>
     );
