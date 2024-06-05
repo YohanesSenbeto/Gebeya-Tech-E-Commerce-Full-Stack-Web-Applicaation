@@ -1,9 +1,0 @@
-{
-    "conventionalCommits.scopes": [
-        "components",
-        "file"
-    ],
-    "conventionalCommits.editor.keepAfterSave": true,
-    "conventionalCommits.promptCI": true,
-    "conventionalCommits.silentAutoCommit": false
-}
