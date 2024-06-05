@@ -1,190 +1,313 @@
 # Gebeya-Tech-E-Commerce-Full-Stack-Web-Applicaation
 
-• Setup Instructions:
+-   Setup Instructions:
 
-1. Clone the repository.
+# Frontend Installation:
 
-2. Install dependencies with npm install.
+-   Clone the Frontend Repository
 
-3. Set up environment variables.
+-   git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
 
-4. Start the development server with npm run dev.
+# Navigate to the Frontend Directory
 
-    • Usage Guidelines:
+-   cd frontend
 
-5. Register or log in to your account.
-6. Browse the list of Gebeya-Tech-products.
-7. Add a new New products and sale.
-8. Edit or delete your products.
-   • Project Architecture:
-   • Client: React components (ProductList, ProductDetails, ProductForm)
-   • Server: Express.js routes (/api/products, /api/AddProducts)
-   • Database: MongoDB collections for users, products, and admin
+# Install Frontend Dependencies
 
-    Demonstration
-    Development Process:
-    • Initial planning and wireframing
-    • Setting up the project repository
-    • Developing the back-end API
-    • Creating the front-end components and integrating with the API
-    • Conducting user testing and feedback sessions
-    • Finalizing and styling the application
+-   npm install
 
-    Key Achievements:
-    • User authentication and authorization
-    • CRUD operations for products and users
-    • Responsive design and user-friendly interface
-    • Comprehensive API documentation with examples
+# Start the Frontend Development Server
 
-GitHub Repository Structure
+-   npm run dev
 
-# Gebeya-Tech-E-Commerce-Full-Stack-Web-Application
+# Backend Installation:
 
-## Setup Instructions:
+# Clone the Backend Repository
 
-1. Clone the repository.
-2. Install dependencies with npm install.
-3. Set up environment variables.
-4. Start the development server with npm run dev.
+-   git clone https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application.git
 
-## Usage Guidelines:
+# Navigate to the Backend Directory
 
-5. Register or log in to your account.
-6. Browse the list of Gebeya-Tech-products.
-7. Add a new New products and sale.
-8. Edit or delete your products.
+-   cd backend
 
-## Project Architecture:
+# Install Backend Dependencies
 
--   **Client:** React components (ProductList, ProductDetails, ProductForm)
--   **Server:** Express.js routes (/api/products, /api/AddProducts)
--   **Database:** MongoDB collections for users, products, and admin
+-   npm install
 
-## Demonstration
+# Start the Backend Server
 
-### Development Process:
+-   npm start
 
--   Initial planning and wireframing
--   Setting up the project repository
--   Developing the back-end API
--   Creating the front-end components and integrating with the API
--   Conducting user testing and feedback sessions
--   Finalizing and styling the application
-
-### Key Achievements:
+# Key Achievements:
 
 -   User authentication and authorization
+
 -   CRUD operations for products and users
+
 -   Responsive design and user-friendly interface
+
 -   Comprehensive API documentation with examples
 
-## GitHub Repository Structure:
+-   integrated with stripe payment gateway
 
-# Gebeya-Tech-E-Commerce-Full-Stack-Web-Application/
+# Usage Guidelines:
 
-├── Backend/
-│ ├── .vscode/
-│ ├── config/
-│ │ └── db.config.js
-│ ├── controllers/
-│ │ ├── install.controller.js
-│ │ ├── login.controller.js
-│ │ ├── order.controller.js
-│ │ ├── signup.controller.js
-│ │ └── user.controller.js
-│ ├── middlewares/
-│ ├── node_modules/
-│ ├── routes/
-│ │ ├── index.js
-│ │ ├── install.routes.js
-│ │ ├── login.routes.js
-│ │ ├── order.routes.js
-│ │ └── signup.routes.js
-│ ├── services/
-│ │ ├── sql/
-│ │ │ └── initial-queries.sql
-│ │ ├── install.service.js
-│ │ ├── login.service.js
-│ │ ├── order.service.js
-│ │ └── user.service.js
-│ ├── .env
-│ ├── .env.production
-│ ├── .gitignore
-│ ├── app.js
-│ ├── db.txt
-│ ├── index.js
-│ ├── package-lock.json
-│ └── package.json
-├── Frontend/
-│ ├── node_modules/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── Cart/
-│ │ │ │ ├── CartItem/
-│ │ │ │ │ └── CartItem.tsx
-│ │ │ │ └── cart.tsx
-│ │ │ ├── component/
+-   Register or log in to your account.
+
+-   Browse the list of Gebeya-Tech-products.
+
+-   Add a new New products and sale.
+
+# Development Process:
+
+-   Initial planning and wireframing
+
+-   Setting up the project repository
+
+-   Developing the back-end API
+
+-   Creating the front-end components and integrating with the API
+
+-   Conducting user testing and feedback sessions
+
+-   Finalizing and styling the application
+
+# GitHub Repository Structure:
+
+-   Gebeya-Tech-E-Commerce-Full-Stack-Web-Application\Frontend
+
+
+<p>
+├── node_modules/
+├── public/
+│ └── index.html
+├── src/
+│ ├── assets/
+│ ├── components/
+│ │ ├── Admin/
+│ │ │ ├── AddProductsForm/
+│ │ │ ├── AdminMenu/
+│ │ │ └── UsersList/
+│ │ ├── Auth/
+│ │ │ └── PrivateAuthRoute.tsx
+│ │ ├── Contexts/
+│ │ ├── gebeyacart/
+│ │ │ ├── App/
+│ │ │ ├── features/
+│ │ │ ├── Cart.tsx
+│ │ │ ├── CartDropdown.tsx
+│ │ │ ├── Checkout.tsx
+│ │ │ ├── CheckoutForm.tsx
+│ │ │ ├── CheckoutSuccess.tsx
+│ │ │ ├── Nav.tsx
+│ │ │ ├── PayButton.tsx
+│ │ │ ├── ProductList.tsx
+│ │ │ ├── stripe.tsx
+│ │ │ └── ToastNotification.tsx
+│ │ ├── Pages/
+│ │ │ ├── admin/
+│ │ │ ├── 404.tsx
+│ │ │ └── Unauthorized.tsx
+│ │ ├── services/
 │ │ │ ├── Contexts/
-│ │ │ │ └── AuthContext.tsx
-│ │ │ ├── Products/
-│ │ │ │ ├── product/
-│ │ │ │ │ ├── card.tsx
-│ │ │ │ │ ├── Eypro.tsx
-│ │ │ │ │ ├── Product.tsx
-│ │ │ │ │ └── Products.tsx
-│ │ │ └── services/
-│ │ │ ├── Contexts/
-│ │ │ │ └── AuthContext.tsx
+│ │ │ ├── BackendPro.tsx
+│ │ │ ├── imageService.tsx
 │ │ │ ├── loginservice.tsx
+│ │ │ ├── productService.tsx
 │ │ │ ├── signupService.tsx
 │ │ │ └── userservice.tsx
 │ │ ├── ui/
-│ │ │ ├── avatar.tsx
-│ │ │ ├── badge.tsx
-│ │ │ ├── button.tsx
-│ │ │ ├── card.tsx
-│ │ │ ├── checkbox.tsx
-│ │ │ ├── drawer.tsx
-│ │ │ ├── dropdown-menu.tsx
-│ │ │ ├── input.tsx
-│ │ │ ├── label.tsx
-│ │ │ ├── select.tsx
-│ │ │ └── textarea.tsx
 │ │ ├── util/
-│ │ │ └── auth.tsx
 │ │ ├── about.tsx
 │ │ ├── Banner.tsx
+│ │ ├── CircularNavigation.tsx
 │ │ ├── contact.tsx
+│ │ ├── Footer.tsx
 │ │ ├── Home.tsx
+│ │ ├── ImageList.tsx
+│ │ ├── ImageUpload.tsx
+│ │ ├── ImageUploader.tsx
 │ │ ├── Login.tsx
+│ │ ├── mockData.tsx
 │ │ ├── Navbar.tsx
 │ │ ├── ProductCard.css
 │ │ ├── ProductCard.tsx
-│ │ ├── ProductList.tsx
+│ │ ├── ProductLists.tsx
+│ │ ├── ProductSearchResults.tsx
 │ │ ├── profile.tsx
-│ │ └── Signup.tsx
-│ ├── lib/
-│ │ └── utils.ts
-│ ├── redux/
-│ ├── App.tsx
-│ ├── index.css
-│ ├── index.js
-│ ├── main.tsx
-│ ├── .eslintrc.cjs
-│ ├── .gitignore
-│ ├── advanced guide.txt
-│ ├── CHANGELOG.md
-│ ├── components.json
-│ ├── index.html
-│ ├── LICENSE
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── postcss.config.js
-│ ├── tailwind.config.js
-│ ├── tsconfig.json
-│ ├── tsconfig.node.json
-│ └── vite.config.ts
-├── .vscode/
+│ │ ├── responsive.tsx
+│ │ ├── searchbar.tsx
+│ │ ├── SearchContext.tsx
+│ │ ├── SearchResults.tsx
+│ │ ├── Signup.tsx
+│ │ ├── lib/
+│ │ ├── App.tsx
+│ │ ├── BirthdayExplosion.tsx
+│ │ ├── index.css
+│ │ ├── main.tsx
+│ │ └── start.tsx
+├── .env
+├── .eslintrc.cjs
+├── .gitignore
 ├── advanced guide.txt
-├── commit_convention.sh
-└── README.md
+├── CHANGELOG.md
+├── commitlint.config.js
+├── components.json
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+</p>
+
+# Gebeya-Tech-E-Commerce-Full-Stack-Web-Application\Backend
+
+<p>
+├── .vscode/
+├── config/
+│ ├── db.config.js
+│ └── multer.config.js
+├── controllers/
+│ ├── cart.controller.js
+│ ├── image.controller.js
+│ ├── install.controller.js
+│ ├── login.controller.js
+│ ├── order.controller.js
+│ ├── Product.Controller.js
+│ ├── stripe.controller.js
+│ └── user.controller.js
+├── middlewares/
+│ └── auth.middleware.js
+├── models/
+│ ├── imageModel.js
+│ └── Order.js
+├── node_modules/
+├── routes/
+│ ├── image.routes.js
+│ ├── index.js
+│ ├── install.routes.js
+│ ├── login.routes.js
+│ ├── order.routes.js
+│ ├── product.routes.js
+│ ├── signup.routes.js
+│ ├── stripe.routes.js
+│ └── users.route.js
+├── services/
+│ ├── sql/
+│ ├── image.service.js
+│ ├── install.service.js
+│ ├── login.service.js
+│ ├── order.service.js
+│ ├── Product.Service.js
+│ ├── stripe.service.js
+│ └── user.service.js
+├── uploads/
+├── .env
+├── .env.production
+├── .gitignore
+├── app.js
+├── db.txt
+├── mongoConnection.js
+├── package-lock.json
+├── package.json
+└── stripe.tsx
+</p>
+<h3> Explanation </h3>
+
+-   config/: Contains configuration files.
+
+-   db.config.js: Configuration for the database connection.
+
+-   multer.config.js: Configuration for Multer, a middleware for handling multipart/form-data, used for uploading files.
+
+-   controllers/: Contains controller files that handle the logic for various parts of the application.
+
+-   cart.controller.js: Manages shopping cart operations.
+
+-   image.controller.js: Manages image-related operations.
+
+-   install.controller.js: Handles initial setup or installation operations.
+
+-   login.controller.js: Manages login operations.
+
+-   order.controller.js: Manages order-related operations.
+
+-   Product.Controller.js: Manages product-related operations.
+
+-   stripe.controller.js: Manages Stripe payment operations.
+
+-   user.controller.js: Manages user-related operations.
+
+-   middlewares/: Contains middleware functions executed during the request-response cycle.
+
+-   auth.middleware.js: Middleware for authentication.
+
+-   models/: Contains database models or schemas.
+
+-   imageModel.js: Schema for images.
+
+-   Order.js: Schema for orders.
+
+-   node_modules/: Directory where npm packages are installed (auto-generated by npm install).
+
+-   routes/: Contains route definitions that map to controllers.
+
+-   image.routes.js: Routes for image operations.
+
+-   index.js: Main router file that consolidates all routes.
+
+-   install.routes.js: Routes for installation operations.
+
+-   login.routes.js: Routes for login operations.
+
+-   order.routes.js: Routes for order operations.
+
+-   product.routes.js: Routes for product operations.
+
+-   signup.routes.js: Routes for user signup operations.
+
+-   stripe.routes.js: Routes for Stripe payment operations.
+
+-   users.route.js: Routes for user-related operations.
+
+-   services/: Contains service files that handle business logic and interactions with the database.
+
+-   sql/: Subdirectory for SQL-related services.
+
+-   image.service.js: Service logic for image operations.
+
+-   install.service.js: Service logic for installation operations.
+
+-   login.service.js: Service logic for login operations.
+
+-   order.service.js: Service logic for order operations.
+
+-   Product.Service.js: Service logic for product operations.
+
+-   stripe.service.js: Service logic for Stripe payment operations.
+
+-   user.service.js: Service logic for user operations.
+-   uploads/: Directory for storing uploaded files.
+
+-   .env: Environment variables configuration file.
+
+-   .env.production: Environment variables configuration file for the production environment.
+
+-   .gitignore: Specifies which files and directories to ignore in version control.
+
+-   app.js: The main entry point of the backend application.
+
+-   db.txt: Potentially a database-related file (could be a dump or configuration).
+
+-   mongoConnection.js: Configuration and connection setup for MongoDB.
+
+-   package-lock.json: Automatically generated file for locking the dependency versions.
+
+-   package.json: Contains metadata about the project and its dependencies.
+
+-   stripe.tsx: Uncommon to see .tsx in the backend, might be related to handling Stripe with TypeScript.
+ ![screencapture-localhost-5173-productList-2024-06-04-18_04_30](https://github.com/YohanesSenbeto/Gebeya-Tech-E-Commerce-Full-Stack-Web-Application/assets/121575345/b6e83c66-fe8b-4664-a7b6-5b501fd87697)
+
