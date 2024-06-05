@@ -2,6 +2,7 @@
 //import BackendPro from './services/BackendPro';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import BackendPro from "./services/BackendPro"
 export default function Home() {
     return (
         <div className="flex flex-col min-h-[100dvh] dark:bg-[#0B1D38] text-white">
@@ -10,14 +11,16 @@ export default function Home() {
                     <img
                         alt="Top Banner"
                         className="w-full object-fit"
-                        height={900}
+                        height={600}
                         src="https://ideogram.ai/api/images/direct/vo9iBXvaTqyZpBrbn9xRag.png"
                         style={{
-                            aspectRatio: "1920/900",
+                            
                             objectFit: "cover",
                         }}
                         width={1920}
                     />
+
+
                 </section>
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-[#0B1D38]">
                     <div className="container px-4 md:px-6">
@@ -70,7 +73,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <CheckIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Quality Assurance
@@ -81,7 +84,7 @@ export default function Home() {
                                         of quality and durability.
                                     </p>
                                 </div>
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <WalletIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Competitive Pricing
@@ -92,7 +95,7 @@ export default function Home() {
                                         your money.
                                     </p>
                                 </div>
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <TruckIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Fast Shipping
@@ -102,7 +105,7 @@ export default function Home() {
                                         your products arrive quickly and safely.
                                     </p>
                                 </div>
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <ShieldIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Secure Payments
@@ -113,7 +116,7 @@ export default function Home() {
                                         secure.
                                     </p>
                                 </div>
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <HeadphonesIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Excellent Support
@@ -124,7 +127,7 @@ export default function Home() {
                                         questions or concerns.
                                     </p>
                                 </div>
-                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[#0B1D38] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
+                                <div className="group flex flex-col items-center justify-center gap-4 rounded-lg border border-[] bg-[#0B1D38] p-6 shadow-lg transition-all hover:bg-[#0B1D38]/90">
                                     <WrenchIcon className="h-8 w-8 fill-primary" />
                                     <h3 className="text-lg font-medium">
                                         Comprehensive Warranty
@@ -139,6 +142,7 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-[#0B1D38]">
+                    <BackendPro/>
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
