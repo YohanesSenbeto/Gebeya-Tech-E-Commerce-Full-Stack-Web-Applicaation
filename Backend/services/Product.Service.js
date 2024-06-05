@@ -27,9 +27,19 @@ async function searchProducts(category, query) {
         params.push(`%${query.toLowerCase()}%`);
     }
 
-    const [rows] = await db.query(sql, params);
+    const rows= await db.query(sql, params);
+
+    console.log(rows)
     return rows;
 }
+
+
+async function getSuggestions(query) {
+    const sql = 'SELECT product_name AS name FROM products WHERE product_name LIKE ? LIMIT 10';
+    const results = await db.query(sql, [`%${query}%`]);
+    return results.map(row => row.name);
+}
+
 async function addProduct(product) {
     console.log(product);
     const { name,
@@ -92,5 +102,6 @@ async function getAllProducts() {
 module.exports = {
     searchProducts,
     addProduct,
-    getAllProducts
+    getAllProducts,
+    getSuggestions
 };

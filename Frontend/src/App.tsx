@@ -19,7 +19,7 @@ import Cart from "./components/gebeyacart/Cart";
 import Checkout from "./components/gebeyacart/Checkout";
 import ToastNotification from "./components/gebeyacart/ToastNotification";
 import CheckoutSuccess from "./components/gebeyacart/CheckoutSuccess";
-import ProductSearchResults from "./components/ProductSearchResults";
+import ProductSearchResults from "./components/ProductSearchResult";
 import { SearchProvider } from './components/SearchContext';
 
 
@@ -62,11 +62,12 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/BackendPro" element={<BackendPro />} />
                         
+                        
                       
                         
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
-                        <Route path="/searchresult" element={<ProductSearchResults />} />
+                        <Route path="/search-results" element={<ProductSearchResults />} />
                         <Route path="/checkout-success"
                             element={<CheckoutSuccess />}
                         />
@@ -113,7 +114,7 @@ function App() {
 
 
                     </Routes>
-                    <BackendPro />
+                    
                     <Footer />
                   
                 </Provider>

@@ -34,16 +34,12 @@ const CheckoutSuccess: React.FC = () => {
                     Checkout Successful!
                 </h2>
                 <p className="text-lg text-gray-700 mb-4">
-                    Your order total is{" "}
-                    <strong>${totalPrice.toFixed(2)}</strong>
+                    Your order is done
                 </p>
                 <p className="text-gray-600 mb-2">
                     Your order might take some time to process.
                 </p>
-                <p className="text-gray-600 mb-4">
-                    Check your order status in your profile after about 10
-                    minutes.
-                </p>
+               
                 <p className="text-gray-600">
                     In case of any inquiries, contact support at{" "}
                     <strong>support@gebeyatech.com</strong>

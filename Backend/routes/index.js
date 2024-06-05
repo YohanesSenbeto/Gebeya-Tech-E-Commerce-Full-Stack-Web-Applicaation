@@ -16,7 +16,7 @@ const signupRoutes = require("./signup.routes");
 const productRoutes = require("./product.routes");
 const stripeRoutes = require("./stripe.routes");
 // Add the stripe routes to the main router
-router.use(stripeRoutes);
+
 router.use(imageRoutes);
 
 router.use(getAllUsersRoute);
@@ -29,6 +29,7 @@ router.use(installRouter);
 router.use(loginRoutes);
 
 router.use(orderRoutes);
+router.use(stripeRoutes);
 
 // Export the router
 module.exports = router;

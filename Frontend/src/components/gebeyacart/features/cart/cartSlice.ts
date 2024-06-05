@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Product {
-  id: string;
-  name: string;
+  product_id: string;
+  product_name: string;
   price: number;
-  image: string; // Make sure to include the image property
+  image_url: string; // Make sure to include the image property
   
 }
 
@@ -25,7 +25,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<Product>) => {
-      const item = state.items.find((item) => item.id === action.payload.id);
+      const item = state.items.find((item) => item.product_id === action.payload.product_id);
       if (item) {
         item.quantity += 1;
       } else {
@@ -33,10 +33,10 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter((item) => item.product_id !== action.payload);
     },
-    updateQuantity: (state, action: PayloadAction<{ id: string; quantity: number }>) => {
-      const item = state.items.find((item) => item.id === action.payload.id);
+    updateQuantity: (state, action: PayloadAction<{ product_id: string; quantity: number }>) => {
+      const item = state.items.find((item) => item.product_id === action.payload.product_id);
       if (item) {
         item.quantity = action.payload.quantity;
       }

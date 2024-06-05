@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.post("/create-checkout-session", async (req, res) => {
     const cartItems = req.body.cartItems.map((item) => ({
-        id: item.id,
-        name: item.name,
+        id: item.product_id,
+        name: item.product_name,
         qty: item.quantity,
     }));
 
@@ -23,11 +23,11 @@ router.post("/create-checkout-session", async (req, res) => {
         price_data: {
             currency: "usd",
             product_data: {
-                name: item.name,
-                images: [item.image],
+                name: item.product_name,
+                images: [item.image_url],
                 description: item.description,
                 metadata: {
-                    id: item.id,
+                    id: item.product_id,
                 },
             },
             unit_amount: item.price * 100,
@@ -38,7 +38,7 @@ router.post("/create-checkout-session", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         shipping_address_collection: {
-            allowed_countries: ["US", "CA", "KE"],
+            allowed_countries: ["US", "CA", "ET"],
         },
         shipping_options: [
             {
@@ -100,7 +100,7 @@ const createOrder = async (customer, data) => {
     const items = JSON.parse(customer.metadata.cart);
 
     const products = items.map((item) => ({
-        productId: item.id,
+        productId: item.product_id,
         quantity: item.qty,
     }));
 

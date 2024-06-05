@@ -31,15 +31,7 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
+
 import { useSearch } from "./SearchContext";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 
@@ -60,34 +52,9 @@ const Navbar = () => {
         0
     );
 
-    const [category, setCategory] = useState("all");
-    const [query, setQuery] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+    
 
-    useEffect(() => {
-        if (query.length > 2) {
-            handleSearch();
-        } else {
-            setSearchResults([]);
-        }
-    }, [query]);
-
-    const handleCategoryChange = (value: string) => {
-        setCategory(value);
-    };
-
-    const handleSearch = async () => {
-        try {
-            const response = await axios.get(
-                `http://localhost:8000/api/products/search?category=${category}&query=${query}`
-            );
-            console.log(response.data);
-            setProducts(searchResults);
-            setSearchResults(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+   
 
     const handleLogout = () => {
         setIsLogged(false);
@@ -105,30 +72,9 @@ const Navbar = () => {
                     <span>Gebeya Tech</span>
                 </Link>
                 <Searchbar />
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button>Our products</Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56">
-                        <DropdownMenuLabel>our products</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <Link to="/laptops">
-                            <DropdownMenuItem>Laptops</DropdownMenuItem>
-                        </Link>
-                        <Link to="/phones">
-                            <DropdownMenuItem>Phones</DropdownMenuItem>
-                        </Link>
-                        <Link to="/Accessories">
-                            <DropdownMenuItem>Accessories</DropdownMenuItem>
-                        </Link>
-                        <Link to="/settings">
-                            <DropdownMenuItem>Settings</DropdownMenuItem>
-                        </Link>
-                        <DropdownMenuSeparator />
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
                 <Drawer>
                     <DrawerTrigger asChild>
                         <Link
@@ -146,15 +92,19 @@ const Navbar = () => {
                             </Badge>
                         </Link>
                     </DrawerTrigger>
-                    <DrawerContent className="w-[400px] h-[550px] m-[0px]">
+                    <DrawerContent>
                         <DrawerHeader>
+                        <CartDropdown items={cartItems} />
                             <DrawerTitle>Cart</DrawerTitle>
                             <DrawerDescription>
                                 Your shopping cart items.
-                                <CartDropdown items={cartItems} />
+                              
                             </DrawerDescription>
                         </DrawerHeader>
-                        <DrawerDescription className="w-[700px]"></DrawerDescription>
+                        <DrawerDescription className="w-[700px]">
+
+                      
+                        </DrawerDescription>
                         <DrawerFooter className="">
                             <DrawerClose>
                                 <div className="">
@@ -169,7 +119,25 @@ const Navbar = () => {
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-400 text-white md:hidden">
+
+
+                <Drawer>
+  <DrawerTrigger>cart</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>proced to checkout?</DrawerTitle>
+      <DrawerDescription>cart</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+    <CartDropdown items={cartItems} />
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+ <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-400 text-white">
                     <LocateIcon className="h-5 w-5" />
                     <span>Ethiopia</span>
                 </div>
@@ -298,26 +266,26 @@ const Navbar = () => {
 
                         <nav className="bg-sky-950 h-full flex flex-col items-start space-y-4 p-4 ">
                             <Link
-                                className=" text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                                className=" text-sm text-white font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                                 to="/"
                             >
                                 Home
                             </Link>
                             <Link
-                                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                                className="text-sm text-white font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                                 to="/productList"
                             >
                                 Shop
                             </Link>
                             <Link
-                                className=" text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                                className=" text-sm text-white font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                                 to="/about"
                             >
                                 About
                             </Link>
                             {isLogged ? (
                                 <button
-                                    className=" text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                                    className=" text-sm text-white font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                                     onClick={handleLogout}
                                 >
                                     Logout
@@ -331,7 +299,7 @@ const Navbar = () => {
                                 </Link>
                             )}
                             <Link
-                                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                                className="text-sm text-white font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                                 to="/contact"
                             >
                                 Contact
